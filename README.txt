@@ -2,6 +2,9 @@ Sat Mar 14 23:14:11 EDT 2015
 
 This is a temporary fork, created only to bootstrap the work necessary to translate OPNsense into the Japanese language.
 
+Discussions regarding this work should happen in the OPNsense Japanese forum!
+https://forum.opnsense.org/
+
 STATUS: Piror work, in early 2014, was stalled- with understandable confusion and changes in the pfSense developer community.
 https://github.com/pfsense/pfsense/compare/master...dotike:ja_JP.UTF8
 Thanks to some hard work, the pfSense user interface had been translated into Japanese.  Yet, with no build tools at the time the work was completed, it was never tested.
@@ -27,6 +30,9 @@ If you are non-technical and bilingual, feel free to contact ike at blackskyrese
 以下の私の機械翻訳を言い訳をしてください！
 
 これは、日本の言語にOPNsenseを翻訳するために必要な作業をブートストラップするために作成され、一時的なフォーク、である。
+
+この作品に関する議論はOPNsense日本のフォーラムで起こるはず！
+https://forum.opnsense.org/
 
 STATUS：Piror作業、初期の2014年に、理解できる混乱とpfSense開発者コミュニティの変化にstalled-た。
 https://github.com/pfsense/pfsense/compare/master...dotike:ja_JP.UTF8
