@@ -1,0 +1,3 @@
+- scrub through file to check all escaped characters and backslashes
+- remove duplicate lines
+- re-run src gettext string dump (using awk) and compare for any changed lines
