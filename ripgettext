@@ -28,42 +28,43 @@ BLOCKSEARCH=${BLOCKSEARCH:-10}
 ## action
 
 # start with a grep through the file,
+
 try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
+
+  _printlineno() {
+  # print path/to/file:lineno
+  printf "#: "
+  echo "$line" | try awk '{print $1}' | try sed 's#^\./##;s/:$//'
+  }
 
   _lineno="`echo "$line" | cut -d ':' -f 2`"
   _lineblock=$(( _lineno + $BLOCKSEARCH ))
   echo "##############################################################################"
 
-  # print path/to/file:lineno
-  printf "#: "
-  echo "$line" | awk '{print $1}' | sed 's#^\./##;s/:$//'
-
-
-  #parse file again for content
-##  echo "$line" | cut -d ':' -f 3- 
-
   # prints from line no, to blocksearch count
-##  sed "${_lineno},${_lineblock}!d" "$SRCFILE"
-  sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
-  | awk -F 'gettext' '{print $2}' \
-  | grep . \
+  try sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+  | try awk -F 'gettext' '{print $2}' \
+  | try grep . \
   | while read l2 ; do
-      echo $l2
 
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
+        _printlineno
         echo "#### DOUBLE"
+        echo $l2 \
+        | sed 's/^("/"/'
+        echo 
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
+        _printlineno
         echo "#### SINGLE"
+        echo $l2
       else
+        _printlineno
         echo "#### NONE"
+        echo $l2
       fi
 
     done
 
-
-
-
-  #echo "$line" | awk '{print $2, $3}'
   #echo 'msgid ""'
   echo 'msgstr ""'
   echo ''
