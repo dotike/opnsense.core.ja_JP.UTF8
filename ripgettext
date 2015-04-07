@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# Takes a single file arg, and for each gettext call it spits out:
+# .pot file formatted strings,
+#
+# #: path/to/file:lineno
+# msgid "A string shorter than 78 characters."
+# msgstr ""
+#
+# #: path/to/file:lineno
+# msgid ""
+# "Multi line strings for lines longer than 78 characters, "
+# "following normal conventions."
+# msgstr ""
+#
+
+shout() { echo "$0: $*" >&2; }
+die() { shout "$*"; exit 111; }
+try() { "$@" || die "cannot $*"; }
+
+
+## vars
+
+SRCFILE="${1:?Needs a target file as first argument.}"
+# number of lines following gettext call to rip through
+BLOCKSEARCH=${BLOCKSEARCH:-10}
+
+## action
+
+try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
+
+  _lineno="`echo "$line" | cut -d ':' -f 2`"
+  _lineblock=$(( _lineno + $BLOCKSEARCH ))
+  echo "##############################################################################"
+
+  echo "$_lineno - $_lineblock"
+
+  # print path/to/file:lineno
+  printf "#: "
+  echo "$line" | awk '{print $1}' | sed 's#^\./##;s/:$//'
+
+
+  #parse file again for content
+##  echo "$line" | cut -d ':' -f 3- 
+
+  # prints from line no, to blocksearch count
+##  sed "${_lineno},${_lineblock}!d" "$SRCFILE"
+  sed "${_lineno},${_lineblock}!d" "$SRCFILE" | awk -F 'gettext' '{print $2}' | grep .
+
+
+
+  #echo "$line" | awk '{print $2, $3}'
+  #echo 'msgid ""'
+  echo 'msgstr ""'
+  echo ''
+done
+
+true
