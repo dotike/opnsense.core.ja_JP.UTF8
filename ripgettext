@@ -27,13 +27,12 @@ BLOCKSEARCH=${BLOCKSEARCH:-10}
 
 ## action
 
+# start with a grep through the file,
 try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
 
   _lineno="`echo "$line" | cut -d ':' -f 2`"
   _lineblock=$(( _lineno + $BLOCKSEARCH ))
   echo "##############################################################################"
-
-  echo "$_lineno - $_lineblock"
 
   # print path/to/file:lineno
   printf "#: "
@@ -45,7 +44,22 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
 
   # prints from line no, to blocksearch count
 ##  sed "${_lineno},${_lineblock}!d" "$SRCFILE"
-  sed "${_lineno},${_lineblock}!d" "$SRCFILE" | awk -F 'gettext' '{print $2}' | grep .
+  sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+  | awk -F 'gettext' '{print $2}' \
+  | grep . \
+  | while read l2 ; do
+      echo $l2
+
+      if [ "`echo "$l2" | grep '^("'`"  ] ; then
+        echo "#### DOUBLE"
+      elif [ "`echo "$l2" | grep "^('"`" ] ; then
+        echo "#### SINGLE"
+      else
+        echo "#### NONE"
+      fi
+
+    done
+
 
 
 
