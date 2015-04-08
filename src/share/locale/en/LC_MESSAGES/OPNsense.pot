@@ -8971,129 +8971,115 @@ msgid ""
 "will not work."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:166
 msgid "Test"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:193
 msgid "Port Test Results"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:268
-msgid "No output received, or connection failed. Try with "Show Remote Text" unchecked first."
+msgid ""
+"No output received, or connection failed. Try with \"Show Remote Text\" "
+"unchecked first."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:270
 msgid "Connection failed (Refused/Timeout)"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:32
 msgid "Diagnostics"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:49
 msgid "Host"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:53
 msgid "Maximum number of hops must be between 1 and %s"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:58
 msgid "When using IPv4, the target host must be an IPv4 address or hostname."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:60
 msgid "When using IPv6, the target host must be an IPv6 address or hostname."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:94
 msgid "Traceroute"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:103
 msgid "Host"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:107
 msgid "IP Protocol"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:114
 msgid "Source Address"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:130
 msgid "Maximum number of hops"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:138
 msgid "Reverse Address Lookup"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:142
 msgid "Use ICMP"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:147
 msgid "Traceroute"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:153
 msgid "Note: "
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:154
-msgid "Traceroute may take a while to complete. You may hit the Stop button on your browser at any time to see the progress of failed traceroutes."
+msgid ""
+"Traceroute may take a while to complete. You may hit the Stop button on "
+"your browser at any time to see the progress of failed traceroutes."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:156
-msgid "Using a source interface/IP address that does not match selected type (IPv4, IPv6) will result in an error or empty output."
+msgid ""
+"Using a source interface/IP address that does not match selected type "
+"(IPv4, IPv6) will result in an error or empty output."
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_traceroute.php:180
 msgid "Traceroute output"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/easyrule.php:31
 msgid "Firewall: EasyRule"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/easyrule.php:71
 msgid "Message"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/easyrule.php:74
-msgid "This is the Easy Rule status page, mainly used to display errors when adding rules. " .
+msgid ""
+"This is the Easy Rule status page, mainly used to display errors when "
+"adding rules. "
+"If you are seeing this, there apparently was not an error, and you "
+"navigated to the page directly without telling it what to do"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/easyrule.php:77
-msgid "This page is meant to be called from the block/pass buttons on the Firewall Logs page"
+msgid ""
+"This page is meant to be called from the block/pass buttons on the Firewall Logs page"
 msgstr ""
 
 ## Machine parsed, please check:
