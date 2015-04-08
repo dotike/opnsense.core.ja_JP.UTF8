@@ -50,8 +50,8 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
         _printlineno
         echo "#### DOUBLE"
-        echo $l2 \
-        | sed 's/^("/"/'
+        echo "$l2" \
+        | sed 's/^("/"/' | sed 's#").*#"#'
         echo 
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
         _printlineno
