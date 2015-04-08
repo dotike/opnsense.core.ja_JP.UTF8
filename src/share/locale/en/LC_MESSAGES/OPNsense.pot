@@ -8959,14 +8959,16 @@ msgstr ""
 msgid "IPv4"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:158
 msgid "IPv6"
 msgstr ""
 
-## Machine parsed, please check:
 #: src/www/diag_testport.php:161
-msgid "If you force IPv4 or IPv6 and use a hostname that does not contain a result using that protocol, <br />it will result in an error. For example if you force IPv4 and use a hostname that only returns an AAAA IPv6 IP address, it will not work."
+msgid ""
+"If you force IPv4 or IPv6 and use a hostname that does not contain a result "
+"using that protocol, <br />it will result in an error. For example if you "
+"force IPv4 and use a hostname that only returns an AAAA IPv6 IP address, it "
+"will not work."
 msgstr ""
 
 ## Machine parsed, please check:
