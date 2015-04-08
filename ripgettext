@@ -22,53 +22,51 @@ try() { "$@" || die "cannot $*"; }
 ## vars
 
 SRCFILE="${1:?Needs a target file as first argument.}"
-# number of lines following gettext call to rip through
+# number of lines following gettext call to parse through
 BLOCKSEARCH=${BLOCKSEARCH:-10}
 
 ## action
 
 # start with a grep through the file,
-
 try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
 
-  _printlineno() {
-  # print path/to/file:lineno
-  printf "#: "
-  echo "$line" | try awk '{print $1}' | try sed 's#^\./##;s/:$//'
-  }
 
-  _lineno="`echo "$line" | cut -d ':' -f 2`"
+  _file="`echo "$line" | try cut -d ':' -f 1`"
+  _lineno="`echo "$line" | try cut -d ':' -f 2`"
   _lineblock=$(( _lineno + $BLOCKSEARCH ))
-  echo "##############################################################################"
 
   # prints from line no, to blocksearch count
   try sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
   | try awk -F 'gettext' '{print $2}' \
   | try grep . \
   | while read l2 ; do
-
+      echo "## Machine parsed, please check:"
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
-        _printlineno
-        echo "#### DOUBLE"
+        echo "#: ${_file}:${_lineno}"
+        #echo "#### DOUBLE"
+        printf "msgid "
         echo "$l2" \
         | try sed 's/^("/"/;s#").*#"#'
-        echo 
+        echo 'msgstr ""'
+        echo ''
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
-        _printlineno
-        echo "#### SINGLE"
+        echo "#: ${_file}:${_lineno}"
+        #echo "#### SINGLE"
+        printf "msgid "
         echo "$l2" \
         | try sed "s/^('/\"/;s#\').*#\"#"
+        echo 'msgstr ""'
+        echo ''
       else
-        _printlineno
+        echo "#: ${_file}:${_lineno}"
         echo "# WARNING: parsed lines may be broken"
+        printf "msgid "
         echo "$l2"
+        echo 'msgstr ""'
+        echo ''
       fi
-
     done
 
-  #echo 'msgid ""'
-  echo 'msgstr ""'
-  echo ''
 done
 
 true
