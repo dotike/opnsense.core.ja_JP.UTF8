@@ -23,7 +23,7 @@ try() { "$@" || die "cannot $*"; }
 
 SRCFILE="${1:?Needs a target file as first argument.}"
 # number of lines following gettext call to parse through
-BLOCKSEARCH=${BLOCKSEARCH:-10}
+BLOCKSEARCH=${BLOCKSEARCH:-1}
 
 ## action
 
@@ -42,10 +42,10 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
   | try awk -F 'gettext' '{print $2}' \
   | try grep . \
   | while read l2 ; do
-      echo "## Machine parsed, please check:"
+      echo "#: Machine parsed, please check:"
+
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
         echo "#: ${_file}:${_lineno}"
-        #echo "#### DOUBLE"
         printf "msgid "
         echo "$l2" \
         | try sed 's/^("/"/;s#").*#"#'
@@ -53,7 +53,6 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
         echo ''
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
         echo "#: ${_file}:${_lineno}"
-        #echo "#### SINGLE"
         printf "msgid "
         echo "$l2" \
         | try sed "s/^('/\"/;s#\').*#\"#"
@@ -67,8 +66,8 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
         echo 'msgstr ""'
         echo ''
       fi
-    done
 
+    done
 done
 
 true
