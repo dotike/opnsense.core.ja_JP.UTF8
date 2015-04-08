@@ -51,16 +51,17 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
         _printlineno
         echo "#### DOUBLE"
         echo "$l2" \
-        | sed 's/^("/"/' | sed 's#").*#"#'
+        | try sed 's/^("/"/;s#").*#"#'
         echo 
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
         _printlineno
         echo "#### SINGLE"
-        echo $l2
+        echo "$l2" \
+        | try sed "s/^('/\"/;s#\').*#\"#"
       else
         _printlineno
-        echo "#### NONE"
-        echo $l2
+        echo "# WARNING: parsed lines may be broken"
+        echo "$l2"
       fi
 
     done
