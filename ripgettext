@@ -36,7 +36,9 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
   _lineblock=$(( _lineno + $BLOCKSEARCH ))
 
   # prints from line no, to blocksearch count
-  try sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+  ##try sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+
+  echo "$line" \
   | try awk -F 'gettext' '{print $2}' \
   | try grep . \
   | while read l2 ; do
