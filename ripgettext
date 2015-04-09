@@ -37,16 +37,16 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
 
 
   # a count of gettext calls per line
-  _linecalls=`echo "$line" | awk -F "gettext" '{print NF-1}'`
+  ##_linecalls=`echo "$line" | awk -F "gettext" '{print NF-1}'`
 
-  # prints from line no, to blocksearch count
-  ##try sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
-
-  echo "$line" \
-  | try awk -F 'gettext' '{print $2}' \
-  | try grep . \
+  sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+  | grep . \
+  | tr '\n' ' ' \
+  | sed -r 's/gettext/\
+/g' \
+  | try grep '^(' \
   | while read l2 ; do
-      echo "## Machine parsed, please check: ${_linecalls} on line ${_lineno}"
+      echo "## Machine parsed, please check:"
 
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
         echo "#: ${_file}:${_lineno}"
