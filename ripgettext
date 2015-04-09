@@ -13,6 +13,9 @@
 # "following normal conventions."
 # msgstr ""
 #
+# BUGS:
+# lazy multi-line grab results in duplicates,
+# can be resolved when de-duping .pot file
 
 shout() { echo "$0: $*" >&2; }
 die() { shout "$*"; exit 111; }
