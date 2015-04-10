@@ -159,9 +159,6 @@ msgstr ""
 msgid "$mediaopt"
 msgstr ""
 
-msgid "$msg"
-msgstr ""
-
 msgid "%1$s (%2$s/%3$s) active and good for %4$d Minutes"
 msgstr ""
 
