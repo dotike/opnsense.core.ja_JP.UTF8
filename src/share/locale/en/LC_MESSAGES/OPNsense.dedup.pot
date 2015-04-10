@@ -159,15 +159,20 @@ msgstr ""
 msgid "$mediaopt"
 msgstr ""
 
+#: src/etc/inc/voucher.inc:368
 msgid "%1$s (%2$s/%3$s) active and good for %4$d Minutes"
 msgstr ""
 
+#: src/etc/inc/config.lib.inc:666
 msgid "%1$s at line %2$d"
 msgstr ""
 
+#: src/www/firewall_aliases_edit.php:281
 msgid "%1$s is not a valid %2$s alias."
 msgstr ""
 
+#: src/etc/inc/config.lib.inc:187
+#: src/etc/inc/config.lib.inc:188
 msgid "%1$s is restoring the configuration %2$s"
 msgstr ""
 
@@ -179,6 +184,8 @@ msgstr ""
 msgid "%s IP configuration from console menu"
 msgstr ""
 
+#: src/etc/inc/service-utils.inc:510
+#: src/etc/inc/service-utils.inc:519
 msgid "%s Service is"
 msgstr ""
 
@@ -198,10 +205,12 @@ msgstr ""
 msgid "%s is a subnet containing more than 64 IP addresses."
 msgstr ""
 
-msgid "%s is not a valid IP address or IPv4 subnet (in "disabled" list)."
+#: src/www/load_balancer_pool_edit.php:106
+msgid "%s is not a valid IP address or IPv4 subnet (in \"disabled\" list)."
 msgstr ""
 
-msgid "%s is not a valid IP address or IPv4 subnet (in "enabled" list)."
+#: src/www/load_balancer_pool_edit.php:96
+msgid "%s is not a valid IP address or IPv4 subnet (in \"enabled\" list)."
 msgstr ""
 
 #: src/www/load_balancer_virtual_server_edit.php:84
@@ -243,6 +252,7 @@ msgstr ""
 msgid "%s packages"
 msgstr ""
 
+#: src/etc/inc/config.console.inc:48
 msgid "%s requires *AT LEAST* %s RAM to function correctly.%s"
 msgstr ""
 
@@ -251,6 +261,7 @@ msgstr ""
 msgid "%s subnet"
 msgstr ""
 
+#: src/www/firewall_aliases_edit.php:291
 msgid "%s/%s is not a valid subnet."
 msgstr ""
 
@@ -262,6 +273,7 @@ msgstr ""
 msgid "%sEnter the Optional %s interface name or 'a' for auto-detection%s"
 msgstr ""
 
+#: src/etc/inc/config.console.inc:503
 msgid "%sInvalid VLAN tag '%s'%s"
 msgstr ""
 
