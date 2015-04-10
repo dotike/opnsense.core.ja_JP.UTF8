@@ -391,7 +391,8 @@ msgstr ""
 msgid "-3 socket could not be created"
 msgstr ""
 
-msgid "-4 dns lookup on hostname "%s" failed"
+#: src/etc/inc/smtp.inc:249
+msgid "-4 dns lookup on hostname \"%s\" failed"
 msgstr ""
 
 #: src/etc/inc/smtp.inc:251
@@ -467,7 +468,8 @@ msgstr ""
 msgid "802.11n"
 msgstr ""
 
-msgid "802.1Q VLAN tag (between 1 and 4094)"
+#: src/www/interfaces_vlan_edit.php:194
+msgid "802.1Q VLAN tag (between 1 and 4094) "
 msgstr ""
 
 #: src/www/interfaces.php:3231
@@ -581,7 +583,8 @@ msgstr ""
 msgid "A file with the name '%s' already exists."
 msgstr ""
 
-msgid "A gateway group with this name "%s" already exists."
+#: src/www/system_gateway_groups_edit.php:94
+msgid "A gateway group with this name \"%s\" already exists."
 msgstr ""
 
 #: src/www/interfaces_gif_edit.php:85
@@ -608,7 +611,9 @@ msgstr ""
 msgid "A route to these destination networks already exists"
 msgstr ""
 
-msgid "A total of"
+#: src/www/system_firmware_check.php:90
+#: src/www/widgets/widgets/system_information.widget.php:63
+msgid "A total of "
 msgstr ""
 
 #: src/www/diag_authentication.php:42
@@ -902,6 +907,11 @@ msgstr ""
 msgid "A valid monitor IP address must be specified."
 msgstr ""
 
+#: src/www/services_captiveportal.php:268
+#: src/www/services_captiveportal.php:271
+#: src/www/services_captiveportal.php:274
+#: src/www/services_captiveportal.php:277
+#: src/www/services_captiveportal.php:280
 msgid "A valid port number must be specified. [%s]"
 msgstr ""
 
@@ -992,7 +1002,8 @@ msgstr ""
 msgid "AES-NI CPU-based Acceleration"
 msgstr ""
 
-msgid "ALL" "</option>"
+#: src/www/diag_backup.php:192
+msgid "ALL"
 msgstr ""
 
 #: src/www/system_advanced_misc.php:66
@@ -1148,6 +1159,7 @@ msgstr ""
 msgid "Activated at"
 msgstr ""
 
+#: src/www/widgets/widgets/ipsec.widget.php:95
 msgid "Active Tunnels"
 msgstr ""
 
@@ -1297,7 +1309,8 @@ msgstr ""
 msgid "Additional authentication servers can be added here."
 msgstr ""
 
-msgid "Additional files..."
+#: src/etc/inc/pkg-utils.inc:1481
+msgid "Additional files... "
 msgstr ""
 
 #: src/www/diag_packet_capture.php:260
@@ -2885,6 +2898,7 @@ msgstr ""
 msgid "Boolean type must be true, false, on, or off."
 msgstr ""
 
+#: src/www/services_dhcp.php:581
 msgid "Boolean"
 msgstr ""
 
@@ -3032,16 +3046,19 @@ msgstr ""
 msgid "By Source IP"
 msgstr ""
 
-msgid "By default, if a hostname resolves IPv6 and IPv4 addresses "."
+#: src/www/system_advanced_network.php:214
+msgid "By default, if a hostname resolves IPv6 and IPv4 addresses "
 msgstr ""
 
 #: src/www/system_advanced_firewall.php:373
 msgid "Bypass firewall rules for traffic on the same interface"
 msgstr ""
 
+#: src/www/widgets/widgets/interface_statistics.widget.php:88
 msgid "Bytes In"
 msgstr ""
 
+#: src/www/widgets/widgets/interface_statistics.widget.php:91
 msgid "Bytes Out"
 msgstr ""
 
