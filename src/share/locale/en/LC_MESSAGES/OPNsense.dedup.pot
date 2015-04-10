@@ -288,13 +288,22 @@ msgstr ""
 msgid "%sOptional interface %s description found: %s"
 msgstr ""
 
-msgid "%sWarning: filter rule removed"
+#: src/etc/inc/upgrade_config.inc:107
+#: src/etc/inc/upgrade_config.inc:119
+#: src/etc/inc/upgrade_config.inc:132
+msgid "%sWarning: filter rule removed "
 msgstr ""
 
-msgid "%sWarning: traffic shaper rule removed"
+#: src/etc/inc/upgrade_config.inc:152
+#: src/etc/inc/upgrade_config.inc:164
+#: src/etc/inc/upgrade_config.inc:177
+msgid "%sWarning: traffic shaper rule removed "
 msgstr ""
 
-msgid "%sWarning:traffic shaper rule removed"
+#: src/etc/inc/upgrade_config.inc:152
+#: src/etc/inc/upgrade_config.inc:164
+#: src/etc/inc/upgrade_config.inc:177 
+msgid "%sWarning: traffic shaper rule removed "
 msgstr ""
 
 #: src/etc/inc/config.console.inc:396
