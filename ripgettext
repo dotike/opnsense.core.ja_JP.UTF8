@@ -56,21 +56,21 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
         printf "msgid "
         echo "$l2" \
         | try sed 's/^("/"/;s#").*#"#'
-        echo 'msgstr ""'
+        #echo 'msgstr ""'
         echo ''
       elif [ "`echo "$l2" | grep "^('"`" ] ; then
         echo "#: ${_file}:${_lineno}"
         printf "msgid "
         echo "$l2" \
         | try sed "s/^('/\"/;s#\').*#\"#"
-        echo 'msgstr ""'
+        #echo 'msgstr ""'
         echo ''
       else
         echo "#: ${_file}:${_lineno}"
         echo "# WARNING: parsed lines may be broken"
         printf "msgid "
         echo "$l2"
-        echo 'msgstr ""'
+        #echo 'msgstr ""'
         echo ''
       fi
 
