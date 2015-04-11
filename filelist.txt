@@ -1,4 +1,3 @@
-src/etc/inc/.interfaces.inc.swp
 src/etc/inc/array_intersect_key.inc
 src/etc/inc/auth.inc
 src/etc/inc/authgui.inc
