@@ -21,7 +21,6 @@ msgstr ""
 msgid " (not recommended). Select Generic if your GPS is not listed.)"
 msgstr ""
 
-#: src/www/firewall_nat_out.php:86
 msgid " - %1$s to %2$s"
 msgstr ""
 
@@ -41,11 +40,7 @@ msgstr ""
 msgid " >>> Trying to fetch package info..."
 msgstr ""
 
-#: src/etc/inc/pkg-utils.inc:1212
-msgid ""
-" >>> Unable to communicate with %1$s. "
-"Please verify DNS and interface configuration, "
-"and that %2$s has functional Internet connectivity."
+msgid " >>> Unable to communicate with %1$s. Please verify DNS and interface configuration, and that %2$s has functional Internet connectivity."
 msgstr ""
 
 #: src/etc/inc/shaper.inc:672
@@ -93,7 +88,6 @@ msgstr ""
 msgid " done!"
 msgstr ""
 
-#: src/etc/inc/array_intersect_key.inc:46
 msgid " is not an array"
 msgstr ""
 
@@ -222,26 +216,20 @@ msgstr ""
 msgid "%s has been stopped."
 msgstr ""
 
-#: src/www/load_balancer_pool_edit.php:109
-msgid ""
-"%s is a subnet containing more than 64 IP addresses (in \"disabled\" list)."
+msgid "%s is a subnet containing more than 64 IP addresses (in "disabled" list)."
 msgstr ""
 
-#: src/www/load_balancer_pool_edit.php:99
-msgid ""
-"%s is a subnet containing more than 64 IP addresses (in \"enabled\" list)."
+msgid "%s is a subnet containing more than 64 IP addresses (in "enabled" list)."
 msgstr ""
 
 #: src/www/load_balancer_virtual_server_edit.php:86
 msgid "%s is a subnet containing more than 64 IP addresses."
 msgstr ""
 
-#: src/www/load_balancer_pool_edit.php:96
-msgid "%s is not a valid IP address or IPv4 subnet (in \"enabled\" list)."
+msgid "%s is not a valid IP address or IPv4 subnet (in "disabled" list)."
 msgstr ""
 
-#: src/www/load_balancer_pool_edit.php:106
-msgid "%s is not a valid IP address or IPv4 subnet (in \"disabled\" list)."
+msgid "%s is not a valid IP address or IPv4 subnet (in "enabled" list)."
 msgstr ""
 
 #: src/www/load_balancer_virtual_server_edit.php:84
@@ -302,7 +290,6 @@ msgstr ""
 msgid "%s packages"
 msgstr ""
 
-#: src/etc/inc/config.console.inc:48
 msgid "%s requires *AT LEAST* %s RAM to function correctly.%s"
 msgstr ""
 
@@ -311,21 +298,13 @@ msgstr ""
 msgid "%s subnet"
 msgstr ""
 
-#: src/www/firewall_aliases_edit.php:291
 msgid "%s/%s is not a valid subnet."
 msgstr ""
 
-#: src/etc/inc/config.console.inc:205
-msgid ""
-"%sEnter the LAN interface name or 'a' for auto-detection %s"
-"NOTE: this enables full Firewalling/NAT mode.%s" .
-"(or nothing if finished):%s"
+msgid "%sEnter the LAN interface name or 'a' for auto-detection %s" . 			    "NOTE: this enables full Firewalling/NAT mode.%s" .
 msgstr ""
 
-#: src/etc/inc/config.console.inc:241
-msgid ""
-"%sEnter the Optional %s interface name or 'a' for auto-detection%s"
-"(or nothing if finished):%s"
+msgid "%sEnter the Optional %s interface name or 'a' for auto-detection%s" . 					"(or nothing if finished):%s"
 msgstr ""
 
 #: src/etc/inc/config.console.inc:503
@@ -343,38 +322,22 @@ msgstr ""
 msgid "%sOptional interface %s description found: %s"
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:132
-msgid ""
-"%sWarning: filter rule removed "
-"(destination network '%s' does not exist anymore)."
+msgid "%sWarning: filter rule removed " . 					"(destination network '%s' does not exist anymore)."
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:119
 msgid "%sWarning: filter rule removed " . 					"(source network '%s' does not exist anymore)."
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:107
-msgid ""
-"%sWarning: filter rule removed "
-"(interface '%s' does not exist anymore)."
+msgid "%sWarning: filter rule removed " . 				"(interface '%s' does not exist anymore)."
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:177
-msgid ""
-"%sWarning: traffic shaper rule removed "
-"(destination network '%s' does not exist anymore)."
+msgid "%sWarning: traffic shaper rule removed " . 					"(destination network '%s' does not exist anymore)."
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:164
-msgid ""
-"%sWarning: traffic shaper rule removed "
-"(source network '%s' does not exist anymore)."
+msgid "%sWarning: traffic shaper rule removed " . 					"(source network '%s' does not exist anymore)."
 msgstr ""
 
-#: src/etc/inc/upgrade_config.inc:152
-msgid ""
-"%sWarning: traffic shaper rule removed "
-"(interface '%s' does not exist anymore)."
+msgid "%sWarning: traffic shaper rule removed " . 				"(interface '%s' does not exist anymore)."
 msgstr ""
 
 #: src/etc/inc/config.console.inc:396
@@ -467,9 +430,7 @@ msgstr ""
 msgid "-3 socket could not be created"
 msgstr ""
 
-
-#: src/etc/inc/smtp.inc:249
-msgid "-4 dns lookup on hostname \"%s\" failed"
+msgid "-4 dns lookup on hostname "%s" failed"
 msgstr ""
 
 #: src/etc/inc/smtp.inc:251
@@ -581,6 +542,42 @@ msgstr ""
 msgid ": the server disconnected"
 msgstr ""
 
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5">Configuration File</a> Override"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5#LEASE_REQUIREMENTS_AND_REQUESTS">Lease Requirements and Requests</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5#LEASE_REQUIREMENTS_AND_REQUESTS">Request</a> <a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp-options&amp;sektion=5">Options</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5#LEASE_REQUIREMENTS_AND_REQUESTS">Require</a> <a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp-options&amp;sektion=5">Options</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5#LEASE_REQUIREMENTS_AND_REQUESTS">Send</a> <a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp-options&amp;sektion=5">Options</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp-options&amp;sektion=5">Option</a> <a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhclient.conf&amp;sektion=5#OPTION_MODIFIERS">Modifiers</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports">Configuration File</a> Override"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports#Authentication_statement">Authentication Statement</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports#Identity_association_statement">Identity Association Statement</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports#Interface_statement">Interface Statement</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports#Keyinfo_statement">Keyinfo Statement</a>"
+msgstr ""
+
+msgid "<a target="FreeBSD_DHCP" href="http://www.freebsd.org/cgi/man.cgi?query=dhcp6c.conf&amp;sektion=5&amp;apropos=0&amp;manpath=FreeBSD+Ports#Prefix_interface_statement">Prefix Interface Statement</a>"
+msgstr ""
+
 #: src/www/services_unbound_acls.php:224
 msgid "<b>Allow Snoop:</b> This action allows recursive and nonrecursive access from hosts within the netblock defined below. Used for cache snooping and ideally should only be configured for your administrative host."
 msgstr ""
@@ -676,13 +673,10 @@ msgstr ""
 msgid "A NTP Time Server name may only contain the characters a-z, 0-9, '-' and '.'."
 msgstr ""
 
-#: src/www/vpn_openvpn_csc.php:670
-msgid ""
-"A NetBIOS Scope   ID provides an extended naming "
-"service for    NetBIOS over TCP/IP. The NetBIOS "
-"scope ID isolates NetBIOS traffic on a single "
-"network to only those nodes with the same "
-"NetBIOS scope ID"
+msgid "A NetBIOS Scope	ID provides an extended naming " . 															"service for	NetBIOS over TCP/IP. The NetBIOS " .
+msgstr ""
+
+msgid "A NetBIOS Scope	ID provides an extended naming " . 														"service for	NetBIOS over TCP/IP. The NetBIOS " .
 msgstr ""
 
 #: src/www/services_ntpd_pps.php:130
@@ -701,28 +695,16 @@ msgstr ""
 msgid "A VLAN with the tag %s is already defined on this interface."
 msgstr ""
 
-#: src/www/system_advanced_misc.php:401
-msgid ""
-"A cryptographic accelerator module will use hardware support to speed up some "
-"cryptographic functions on systems which have the chip. Do not enable this "
-"option if you have a Hifn cryptographic acceleration card, as this will take "
-"precedence and the Hifn card will not be used. Acceleration should be automatic "
-"for IPsec when using a cipher supported by your chip, such as AES-128. OpenVPN "
-"should be set for AES-128-CBC and have cryptodev enabled for hardware "
-"acceleration."
+msgid "A cryptographic accelerator module will use hardware support to speed up some " . 											"cryptographic functions on systems which have the chip. Do not enable this " .
 msgstr ""
 
 #: src/www/services_captiveportal_filemanager.php:86
 msgid "A file with the name '%s' already exists."
 msgstr ""
 
-#: src/www/system_gateway_groups_edit.php:111
-msgid ""
-"A gateway group cannot have the same name with a gateway "%s" please choose "
-"another name."
+msgid "A gateway group cannot have the same name with a gateway "%s" please choose another name."
 msgstr ""
 
-#: src/www/system_gateway_groups_edit.php:94
 msgid "A gateway group with this name "%s" already exists."
 msgstr ""
 
@@ -799,14 +781,11 @@ msgstr ""
 msgid "A valid FQDN for 'Peer identifier' must be specified."
 msgstr ""
 
-#: src/www/services_captiveportal_hostname_edit.php:93
 msgid "A valid Hostname must be specified. [%s]"
 msgstr ""
 
 #: src/www/services_unbound_domainoverride_edit.php:76
-msgid ""
-"A valid IP address and port must be specified, for example "
-"192.168.100.10@5353."
+msgid "A valid IP address and port must be specified, for example 192.168.100.10@5353."
 msgstr ""
 
 #: src/www/vpn_ipsec_mobile.php:153
@@ -882,11 +861,6 @@ msgstr ""
 msgid "A valid IP address must be specified, or # for an exclusion or ! to not forward at all."
 msgstr ""
 
-#: src/www/services_captiveportal.php:256
-#: src/www/services_captiveportal.php:259
-#: src/www/services_captiveportal.php:262
-#: src/www/services_captiveportal.php:265
-#: src/www/services_captiveportal_ip_edit.php:92
 msgid "A valid IP address must be specified. [%s]"
 msgstr ""
 
@@ -897,7 +871,6 @@ msgstr ""
 msgid "A valid IP address must be specified."
 msgstr ""
 
-#: src/www/diag_packet_capture.php:132
 msgid "A valid IP address or CIDR block must be specified. [%s]"
 msgstr ""
 
@@ -1168,11 +1141,6 @@ msgstr ""
 msgid "A valid monitor IP address must be specified."
 msgstr ""
 
-#: src/www/services_captiveportal.php:268
-#: src/www/services_captiveportal.php:271
-#: src/www/services_captiveportal.php:274
-#: src/www/services_captiveportal.php:277
-#: src/www/services_captiveportal.php:280
 msgid "A valid port number must be specified. [%s]"
 msgstr ""
 
@@ -1337,8 +1305,6 @@ msgstr ""
 msgid "ARP Table"
 msgstr ""
 
-#: src/etc/inc/ipsec.inc:43
-#: src/etc/inc/ipsec.inc:52
 msgid "ASN.1 distinguished Name"
 msgstr ""
 
@@ -1425,10 +1391,7 @@ msgstr ""
 msgid "Accounting"
 msgstr ""
 
-#: src/www/system_usermanager.php:897
-msgid ""
-"Accounts created here are also used for other parts of the system "
-"such as OpenVPN, IPsec, and Captive Portal."
+msgid "Accounts created here are also used for other parts of the system " . 										"such as OpenVPN, IPsec, and Captive Portal."
 msgstr ""
 
 #: src/etc/inc/functions.inc:87
@@ -1471,7 +1434,6 @@ msgstr ""
 msgid "Activated at"
 msgstr ""
 
-#: src/www/widgets/widgets/ipsec.widget.php:95
 msgid "Active Tunnels"
 msgstr ""
 
@@ -1571,9 +1533,7 @@ msgstr ""
 msgid "Add privileges"
 msgstr ""
 
-#: src/www/interfaces_bridge_edit.php:462
-msgid "Add the interface named by interface as a span port on the "
-"bridge.  Span ports transmit a copy of every frame received by "
+msgid "Add the interface named by interface as a span port on the " . 							     "bridge.  Span ports transmit a copy of every frame received by " .
 msgstr ""
 
 #: src/www/diag_gmirror.php:290
@@ -1642,18 +1602,10 @@ msgstr ""
 msgid "Additional files... "
 msgstr ""
 
-#: src/www/system_usermanager.php:892
-msgid ""
-"Additional users can be added here. User permissions for accessing "
-"the webConfigurator can be assigned directly or inherited from group memberships. "
+msgid "Additional users can be added here. User permissions for accessing " . 										"the webConfigurator can be assigned directly or inherited from group memberships. " .
 msgstr ""
 
-#: src/www/system_groupmanager.php:458
-msgid ""
-"Additional webConfigurator groups can be added here.
-                                                                                                                        Group permissions can be assigned which are inherited by users who are members of the group.
-                                                                                                                        An icon that appears grey indicates that it is a system defined object.
-                                                                                                                        Some system object properties can be modified but they cannot be deleted."
+msgid "Additional webConfigurator groups can be added here. 															Group permissions can be assigned which are inherited by users who are members of the group.
 msgstr ""
 
 #: src/www/diag_packet_capture.php:260
@@ -1716,10 +1668,7 @@ msgstr ""
 msgid "Adds interface to QinQ interface groups so you can write filter rules easily."
 msgstr ""
 
-#: src/etc/inc/shaper.inc:710
-msgid ""
-"Adjusts the size, in bytes, of the token bucket regulator. "
-"If not specified, heuristics based on the interface "
+msgid "Adjusts the size, in bytes, of the token bucket regulator. " 		      .  "If not specified, heuristics based on the interface "
 msgstr ""
 
 #: src/www/system_advanced_tabs.php:9
@@ -1937,7 +1886,6 @@ msgstr ""
 msgid "Aliases"
 msgstr ""
 
-#: src/www/services_captiveportal_vouchers_edit.php:124
 msgid "All %1$s vouchers from Roll %2$s marked unused"
 msgstr ""
 
@@ -2897,10 +2845,7 @@ msgstr ""
 msgid "Allow default gateway switching"
 msgstr ""
 
-#: src/www/interfaces_bridge_edit.php:510
-msgid ""
-"Allow interface to automatically detect edge status.  This is the "
-"default for all interfaces added to a bridge."
+msgid "Allow interface to automatically detect edge status.  This is the " . 							     "default for all interfaces added to a bridge."
 msgstr ""
 
 #: src/www/interfaces.php:3060
@@ -2973,8 +2918,6 @@ msgstr ""
 msgid "Allows selection of different speeds for the serial console port."
 msgstr ""
 
-#: src/etc/inc/xmlrpc_client.inc:1636
-#: src/etc/inc/xmlrpc_client.inc:1652
 msgid "Already initialized as a [%s]"
 msgstr ""
 
@@ -3054,7 +2997,6 @@ msgstr ""
 msgid "An interface with the specified description already exists."
 msgstr ""
 
-#: src/www/services_router_advertisements.php:127
 msgid "An invalid subnet or alias was specified. [%s/%s]"
 msgstr ""
 
@@ -3088,10 +3030,7 @@ msgstr ""
 msgid "Anti-lockout"
 msgstr ""
 
-#: src/www/services_captiveportal_filemanager.php:221
-msgid ""
-"Any files that you upload here with the filename prefix of captiveportal- will "
-"be made available in the root directory of the captive portal HTTP(S) server. "
+msgid "Any files that you upload here with the filename prefix of captiveportal- will " . 								"be made available in the root directory of the captive portal HTTP(S) server. " .
 msgstr ""
 
 #: src/www/firewall_rules_edit.php:1367
@@ -3121,8 +3060,6 @@ msgstr ""
 msgid "Apply the action immediately on match."
 msgstr ""
 
-#: src/www/javascript/datepicker/js/datepicker.js:66
-#: src/www/javascript/jquery/jquery-ui-1.11.1.min.js:6
 msgid "April"
 msgstr ""
 
@@ -3203,8 +3140,6 @@ msgstr ""
 msgid "Attributes"
 msgstr ""
 
-#: src/www/javascript/datepicker/js/datepicker.js:70
-#: src/www/javascript/jquery/jquery-ui-1.11.1.min.js:6
 msgid "August"
 msgstr ""
 
@@ -3305,11 +3240,9 @@ msgstr ""
 msgid "Auto added OpenVPN rule from config upgrade."
 msgstr ""
 
-#: src/etc/inc/filter.inc:1429
 msgid "Auto created rule for ISAKMP"
 msgstr ""
 
-#: src/etc/inc/filter.inc:1439
 msgid "Auto created rule"
 msgstr ""
 
@@ -26936,19 +26869,5 @@ msgid (sprintf("The number of seconds of failed probes before the alarm will fir
 msgstr ""
 
 msgid (sprintf("The probe interval needs to be less than the default down time setting (%d)", $apinger_default['down'])); 				}
-msgstr ""
-
-#: src/www/services_dyndns_edit.php:411
-msgid ""
-"Tabs (\\t), newlines (\\n) and carriage returns (\\r) at the beginning or "
-"end of the returned results are removed before comparison.");?>
-msgstr ""
-
-#: src/www/system_firmware_auto.php:202
-msgid "is now upgrading."
-msgstr ""
-
-#: src/www/system_firmware_auto.php:202
-msgid "The firewall will reboot once the operation is completed."
 msgstr ""
 

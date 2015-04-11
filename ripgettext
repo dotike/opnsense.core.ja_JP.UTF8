@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# Takes a single file arg, and for each gettext call it spits out:
+# .pot file formatted strings,
+#
+# #: path/to/file:lineno
+# msgid "A string shorter than 78 characters."
+# msgstr ""
+#
+# #: path/to/file:lineno
+# msgid ""
+# "Multi line strings for lines longer than 78 characters, "
+# "following normal conventions."
+# msgstr ""
+#
+# BUGS:
+# lazy multi-line grab results in duplicates,
+# can be resolved when de-duping .pot file
+
+shout() { echo "$0: $*" >&2; }
+die() { shout "$*"; exit 111; }
+try() { "$@" || die "cannot $*"; }
+
+
+## vars
+
+SRCFILE="${1:?Needs a target file as first argument.}"
+# number of lines following gettext call to parse through
+BLOCKSEARCH=${BLOCKSEARCH:-1}
+
+## action
+
+# start with a grep through the file,
+try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
+
+
+  _file="`echo "$line" | try cut -d ':' -f 1`"
+  _lineno="`echo "$line" | try cut -d ':' -f 2`"
+  _lineblock=$(( _lineno + $BLOCKSEARCH ))
+
+
+  # a count of gettext calls per line
+  ##_linecalls=`echo "$line" | awk -F "gettext" '{print NF-1}'`
+
+  sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
+  | tr '\n' ' ' \
+  | try grep . \
+  | try sed -r 's/gettext/\
+/g' \
+  | try grep '^(' \
+  | while read l2 ; do
+      #echo "## Machine parsed, please check:"
+
+      if [ "`echo "$l2" | grep '^("'`"  ] ; then
+        echo "#: ${_file}:${_lineno}"
+        printf "msgid "
+        echo "$l2" \
+        | try sed 's/^("/"/;s#").*#"#'
+        #echo 'msgstr ""'
+        echo ''
+      elif [ "`echo "$l2" | grep "^('"`" ] ; then
+        echo "#: ${_file}:${_lineno}"
+        printf "msgid "
+        echo "$l2" \
+        | try sed "s/^('/\"/;s#\').*#\"#"
+        #echo 'msgstr ""'
+        echo ''
+      else
+        echo "#: ${_file}:${_lineno}"
+        echo "# WARNING: parsed lines may be broken"
+        printf "msgid "
+        echo "$l2"
+        #echo 'msgstr ""'
+        echo ''
+      fi
+
+    done
+done
+
+true
