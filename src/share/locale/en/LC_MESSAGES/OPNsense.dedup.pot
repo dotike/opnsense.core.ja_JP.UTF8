@@ -644,6 +644,7 @@ msgstr ""
 msgid "A valid FQDN for 'Peer identifier' must be specified."
 msgstr ""
 
+#: src/www/services_captiveportal_hostname_edit.php:93
 msgid "A valid Hostname must be specified. [%s]"
 msgstr ""
 
@@ -2319,6 +2320,8 @@ msgstr ""
 msgid "Allows selection of different speeds for the serial console port."
 msgstr ""
 
+#: src/etc/inc/xmlrpc_client.inc:1636
+#: src/etc/inc/xmlrpc_client.inc:1652
 msgid "Already initialized as a [%s]"
 msgstr ""
 
@@ -2380,6 +2383,7 @@ msgstr ""
 msgid "An interface with the specified description already exists."
 msgstr ""
 
+#: src/www/services_router_advertisements.php:127
 msgid "An invalid subnet or alias was specified. [%s/%s]"
 msgstr ""
 
@@ -2436,6 +2440,9 @@ msgstr ""
 msgid "Apply the action immediately on match."
 msgstr ""
 
+#: src/www/firewall_rules.php:592
+#: src/www/firewall_schedule.php:31
+#: src/www/firewall_schedule_edit.php:53
 msgid "April"
 msgstr ""
 
@@ -2508,6 +2515,9 @@ msgstr ""
 msgid "Attributes"
 msgstr ""
 
+#: src/www/firewall_rules.php:592
+#: src/www/firewall_schedule.php:31
+#: src/www/firewall_schedule_edit.php:53
 msgid "August"
 msgstr ""
 
@@ -2608,9 +2618,11 @@ msgstr ""
 msgid "Auto added OpenVPN rule from config upgrade."
 msgstr ""
 
+#: src/etc/inc/filter.inc:1429
 msgid "Auto created rule for ISAKMP"
 msgstr ""
 
+#: src/etc/inc/filter.inc:1439
 msgid "Auto created rule"
 msgstr ""
 
@@ -2654,7 +2666,8 @@ msgstr ""
 msgid "Automatically ping host"
 msgstr ""
 
-msgid "Auxiliary files..."
+#: src/etc/inc/pkg-utils.inc:1088
+msgid "Auxiliary files... "
 msgstr ""
 
 #: src/www/load_balancer_relay_protocol_edit.php:239
@@ -3260,7 +3273,8 @@ msgstr ""
 msgid "Cannot get CPU load"
 msgstr ""
 
-msgid "Cannot reinstall packages"
+#: src/etc/inc/pkg-utils.inc:1214
+msgid "Cannot reinstall packages: "
 msgstr ""
 
 #: src/www/diag_logs_filter.php:42
@@ -3490,6 +3504,7 @@ msgstr ""
 msgid "Changes to this option will take effect after a reboot."
 msgstr ""
 
+#: src/etc/inc/pkg-utils.inc:1513
 msgid "Changing file mode to %1$s for %2$s%3$s%4$s"
 msgstr ""
 
@@ -3522,6 +3537,7 @@ msgstr ""
 msgid "Checking ..."
 msgstr ""
 
+#: src/etc/inc/filter.inc:3576
 msgid "Checking for %1$s PF hooks in package %2$s"
 msgstr ""
 
