@@ -43,13 +43,13 @@ try grep -Rn 'gettext' "$SRCFILE" | while read line ; do
   ##_linecalls=`echo "$line" | awk -F "gettext" '{print NF-1}'`
 
   sed "${_lineno},${_lineblock}!d" "$SRCFILE" \
-  | grep . \
   | tr '\n' ' ' \
-  | sed -r 's/gettext/\
+  | try grep . \
+  | try sed -r 's/gettext/\
 /g' \
   | try grep '^(' \
   | while read l2 ; do
-      echo "## Machine parsed, please check:"
+      #echo "## Machine parsed, please check:"
 
       if [ "`echo "$l2" | grep '^("'`"  ] ; then
         echo "#: ${_file}:${_lineno}"
