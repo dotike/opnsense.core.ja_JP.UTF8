@@ -17,9 +17,6 @@ msgstr ""
 msgid " - Submit this to the developers for inspection"
 msgstr ""
 
-msgid " <input name="adv_dhcp_config_advanced" type="checkbox" id="adv_dhcp_config_advanced" value="" onclick="show_adv_dhcp_config(this)" /> ' .
-msgstr ""
-
 msgid " <input name="adv_dhcp_config_advanced" type="checkbox" id="adv_dhcp_config_advanced" value="" onclick="show_adv_dhcp_config(this)" /> ' . 															" Advanced &nbsp; &nbsp; " .
 msgstr ""
 
