@@ -1,0 +1,33 @@
+#!/bin/sh
+
+yell() { echo "$0: $*" >&2; }
+die() { yell "$*"; exit 111; }
+try() { "$@" || die "cannot $*"; }
+
+
+DEFAULT="${DEFAULT:-src/share/locale/en/LC_MESSAGES/OPNsense.pot}"
+infile="${1:-$DEFAULT}"
+
+grep '^msgid ' "${infile}" \
+| grep -v '^msgid ""' \
+| sort | uniq \
+| grep . \
+| sed -n '/^.\{1\}/p' \
+| sed -n '/^.\{78\}/!p' \
+| sed 's/^msgid "//;s/"$//' \
+| while read l0 ; do
+
+  git grep -n "gettext" \
+    | grep -v "^${infile}" \
+    | grep -- "\"${l0}\"" \
+    | cut -d ':' -f 1-2 \
+    | sed 's/^src/#: src/'
+
+  echo "msgid \"${l0}\""
+  echo 'msgstr ""'
+  echo ''
+
+done
+
+
+true
