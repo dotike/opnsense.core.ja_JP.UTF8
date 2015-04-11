@@ -151,15 +151,20 @@ msgstr ""
 msgid "$mediaopt"
 msgstr ""
 
+#: src/etc/inc/voucher.inc:368
 msgid "%1$s (%2$s/%3$s) active and good for %4$d Minutes"
 msgstr ""
 
+#: src/etc/inc/config.lib.inc:666
 msgid "%1$s at line %2$d"
 msgstr ""
 
+#: src/www/firewall_aliases_edit.php:281
 msgid "%1$s is not a valid %2$s alias."
 msgstr ""
 
+#: src/etc/inc/config.lib.inc:187
+#: src/etc/inc/config.lib.inc:188
 msgid "%1$s is restoring the configuration %2$s"
 msgstr ""
 
@@ -179,6 +184,8 @@ msgstr ""
 msgid "%s IPs have been disabled. Please note that disabling does not survive a reboot."
 msgstr ""
 
+#: src/etc/inc/service-utils.inc:510
+#: src/etc/inc/service-utils.inc:519
 msgid "%s Service is"
 msgstr ""
 
