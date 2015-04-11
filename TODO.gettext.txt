@@ -1,3 +1,7 @@
 - remove duplicate lines
 - scrub through file to check all escaped characters and backslashes
 - re-run src gettext string dump (using awk) and compare for any changed lines
+
+These lines need clarification in the source:
+src/www/interfaces.php:1931
+
