@@ -29,8 +29,8 @@
 */
 
 /*
-	pfSense_BUILDER_BINARIES:
-	pfSense_MODULE:	utils
+	OPNsense_BUILDER_BINARIES:
+	OPNsense_MODULE:	utils
 */
 
 require_once("auth.inc");

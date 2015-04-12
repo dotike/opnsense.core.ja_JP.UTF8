@@ -19,7 +19,7 @@
 ##  $InitString		External initialization string
 ##  $LoginScript	If "yes", look for script login
 ##
-## pfSense specific variables:
+## OPNsense specific variables:
 ##	$APN			Access Point (host)Name for 3G connections
 ##	$APNum			Access Point Number, typically "1", might not matter
 ##	$SimPin			SIM card PIN number

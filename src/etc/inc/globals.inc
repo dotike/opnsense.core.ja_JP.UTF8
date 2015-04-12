@@ -43,7 +43,7 @@ $g = array(
 	"varetc_path" => "/var/etc",
 	"vardb_path" => "/var/db",
 	"varlog_path" => "/var/log",
-	"xml_rootobj" => "pfsense",
+	"xml_rootobj" => "opnsense",
 	"admin_group" => "admins",
 	"product_name" => "OPNsense",
 	"product_website" => "https://opnsense.org",
@@ -80,7 +80,7 @@ if(file_exists("/usr/local/etc/platform")) {
 	//$arch = ($arch == "i386") ? "" : '/' . $arch;
 
 	/* Full installs and NanoBSD use the same update directory and manifest in 2.x */
-	$g['update_url']="https://snapshots.opnsense.org/FreeBSD_releng/10.1/{$arch}/pfSense_HEAD/.updaters/";
+	$g['update_url']="https://snapshots.opnsense.org/FreeBSD_releng/10.1/{$arch}/OPNsense_HEAD/.updaters/";
 	$g['update_manifest']="https://updates.opnsense.org/manifest";
 
 	$g['platform'] = trim(file_get_contents("/usr/local/etc/platform"));

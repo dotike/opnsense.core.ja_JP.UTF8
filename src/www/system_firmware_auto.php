@@ -172,7 +172,7 @@ if(!$latest_version) {
 }
 
 /* launch external upgrade helper */
-$external_upgrade_helper_text = "/usr/local/etc/rc.firmware pfSenseupgrade {$g['upload_path']}/latest.tgz";
+$external_upgrade_helper_text = "/usr/local/etc/rc.firmware OPNsenseupgrade {$g['upload_path']}/latest.tgz";
 $downloaded_latest_tgz_sha256 = str_replace("\n", "", `/sbin/sha256 -q {$g['upload_path']}/latest.tgz`);
 $upgrade_latest_tgz_sha256 = str_replace("\n", "", `/bin/cat {$g['upload_path']}/latest.tgz.sha256 | awk '{ print $4 }'`);
 

@@ -39,7 +39,7 @@
 */
 
 /*
-	pfSense_MODULE:	captiveportal
+	OPNsense_MODULE:	captiveportal
 */
 
 define('GIGAWORDS_RIGHT_OPERAND', '4294967296'); // 2^32

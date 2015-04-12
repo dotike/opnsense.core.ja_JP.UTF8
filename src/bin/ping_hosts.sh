@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# pfSense ping helper
-# written by Scott Ullrich
+# OPNsense ping helper
+# originally written by Scott Ullrich for pfSense
 # (C)2006 Scott Ullrich
 # All rights reserved.
 

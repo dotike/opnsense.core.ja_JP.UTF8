@@ -235,7 +235,7 @@ if ($_POST) {
 	}
 
 	// Allow extending of the firewall edit page and include custom input validation
-	pfSense_handle_custom_code("/usr/local/pkg/firewall_aon/input_validation");
+	OPNsense_handle_custom_code("/usr/local/pkg/firewall_aon/input_validation");
 
 	if (!$input_errors) {
 	        $natent = array();
@@ -305,7 +305,7 @@ if ($_POST) {
 		$natent['updated'] = make_config_revision_entry();
 
 		// Allow extending of the firewall edit page and include custom input validation
-		pfSense_handle_custom_code("/usr/local/pkg/firewall_aon/pre_write_config");
+		OPNsense_handle_custom_code("/usr/local/pkg/firewall_aon/pre_write_config");
 
 		if (isset($id) && $a_out[$id]) {
 			$a_out[$id] = $natent;
@@ -450,7 +450,7 @@ function poolopts_change() {
 									</tr>
 							<?php
 									// Allow extending of the firewall edit page and include custom input validation
-									pfSense_handle_custom_code("/usr/local/pkg/firewall_rules/htmlphpearly");
+									OPNsense_handle_custom_code("/usr/local/pkg/firewall_rules/htmlphpearly");
 							?>
 									<tr>
 										<td width="22%" valign="top" class="vncellreq"><?=gettext("Disabled");?></td>
@@ -839,7 +839,7 @@ function poolopts_change() {
 									endif;
 								endif;
 								// Allow extending of the firewall edit page and include custom input validation
-								pfSense_handle_custom_code("/usr/local/pkg/firewall_aon/htmlphplate");
+								OPNsense_handle_custom_code("/usr/local/pkg/firewall_aon/htmlphplate");
 							?>
 									<tr>
 										<td width="22%" valign="top">&nbsp;</td>

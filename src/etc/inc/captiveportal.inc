@@ -1,7 +1,7 @@
 <?php
 /*
     captiveportal.inc
-    part of pfSense (https://www.pfsense.org)
+    originally part of pfSense (https://www.pfsense.org)
     Copyright (C) 2004-2011 Scott Ullrich <sullrich@gmail.com>
     Copyright (C) 2009-2012 Ermal Lu�i <eri@pfsense.org>
     Copyright (C) 2003-2006 Manuel Kasper <mk@neon1.net>.
@@ -36,10 +36,10 @@
     added rules which may have been created by other per-user code (index.php, etc).
     These changes are (c) 2004 Keycom PLC.
 
-    pfSense_BUILDER_BINARIES:	/sbin/ipfw	/sbin/route
-    pfSense_BUILDER_BINARIES:	/usr/local/sbin/lighttpd	/usr/local/bin/minicron /sbin/pfctl
-    pfSense_BUILDER_BINARIES:	/bin/hostname	/bin/cp
-    pfSense_MODULE: captiveportal
+    OPNsense_BUILDER_BINARIES:	/sbin/ipfw	/sbin/route
+    OPNsense_BUILDER_BINARIES:	/usr/local/sbin/lighttpd	/usr/local/bin/minicron /sbin/pfctl
+    OPNsense_BUILDER_BINARIES:	/bin/hostname	/bin/cp
+    OPNsense_MODULE: captiveportal
 */
 
 /* include all configuration functions */
@@ -222,7 +222,7 @@ function portal_allow($clientip,$clientmac,$username,$password = null, $attribut
 function captiveportal_get_last_activity($ip, $mac = NULL) {
     global $cpzone;
 
-    $ipfwoutput = pfSense_ipfw_getTablestats($cpzone, 1, $ip, $mac);
+    $ipfwoutput = OPNsense_ipfw_getTablestats($cpzone, 1, $ip, $mac);
     /* Reading only from one of the tables is enough of approximation. */
     if (is_array($ipfwoutput)) {
         return $ipfwoutput['timestamp'];
@@ -1307,7 +1307,7 @@ function getVolume($ip, $mac = NULL) {
     // Initialize vars properly, since we don't want NULL vars
     $volume['input_pkts'] = $volume['input_bytes'] = $volume['output_pkts'] = $volume['output_bytes'] = 0 ;
 
-    $ipfw = pfSense_ipfw_getTablestats($cpzone, 1, $ip, $mac);
+    $ipfw = OPNsense_ipfw_getTablestats($cpzone, 1, $ip, $mac);
     if (is_array($ipfw)) {
         if ($reverse) {
             $volume['output_pkts'] = $ipfw['packets'];
@@ -1319,7 +1319,7 @@ function getVolume($ip, $mac = NULL) {
         }
     }
 
-    $ipfw = pfSense_ipfw_getTablestats($cpzone, 2, $ip);
+    $ipfw = OPNsense_ipfw_getTablestats($cpzone, 2, $ip);
     if (is_array($ipfw)) {
         if ($reverse) {
             $volume['input_pkts'] = $ipfw['packets'];

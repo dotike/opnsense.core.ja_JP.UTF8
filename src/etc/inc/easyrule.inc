@@ -3,7 +3,7 @@
 	easyrule.inc.php
 
 	Copyright (C) 2009-2010 Jim Pingle (jpingle@gmail.com)
-	Originally Sponsored By Anathematic @ pfSense Forums
+	Originally Sponsored By Anathematic @ OPNsense Forums
 	All rights reserved.
 
 	Redistribution and use in source and binary forms, with or without
@@ -28,8 +28,8 @@
 	POSSIBILITY OF SUCH DAMAGE.
 */
 /*
-	pfSense_BUILDER_BINARIES:
-	pfSense_MODULE:	filter
+	OPNsense_BUILDER_BINARIES:
+	OPNsense_MODULE:	filter
 */
 
 $blockaliasname = 'EasyRuleBlockHosts';

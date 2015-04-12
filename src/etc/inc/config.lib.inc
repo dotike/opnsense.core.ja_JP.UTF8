@@ -60,7 +60,7 @@ function encrypted_configxml()
 			echo "\nEnter the password to decrypt config.xml: ";
 			$decrypt_password = chop(fgets($fp));
 			$data = decrypt_data($configtxt, $decrypt_password);
-			if (!strstr($data, '<pfsense>')) {
+			if (!strstr($data, '<OPNsense>')) {
 				$data = '';
 			}
 			if($data) {
@@ -97,7 +97,7 @@ function parse_config($parse = false)
 		$last_backup = discover_last_backup();
 		if ($last_backup) {
 			log_error(gettext("No config.xml found, attempting last known config restore."));
-			file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "pfSenseConfigurator", "");
+			file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "OPNsenseConfigurator", "");
 			restore_backup("/conf/backup/{$last_backup}");
 		} else {
 			log_error(gettext('No config.xml found, attempting to restore factory config.'));
@@ -120,7 +120,7 @@ function parse_config($parse = false)
 	if ($parse == true) {
 		if (!file_exists($config_xml)) {
 			log_error("No config.xml found, attempting last known config restore.");
-			file_notice("config.xml", "No config.xml found, attempting last known config restore.", "pfSenseConfigurator", "");
+			file_notice("config.xml", "No config.xml found, attempting last known config restore.", "OPNsenseConfigurator", "");
 			$last_backup = discover_last_backup();
 			if ($last_backup) {
 				restore_backup("/conf/backup/{$last_backup}");
@@ -129,7 +129,7 @@ function parse_config($parse = false)
 				restore_backup('/usr/local/etc/config.xml');
 			}
 		}
-		$config = parse_xml_config($config_xml, array($g['xml_rootobj'], 'pfsense'));
+		$config = parse_xml_config($config_xml, array($g['xml_rootobj'], 'OPNsense'));
 		if ($config == -1) {
 			$last_backup = discover_last_backup();
 			if ($last_backup)
@@ -185,7 +185,7 @@ function restore_backup($file)
 		copy($file, '/conf/config.xml');
 		disable_security_checks();
 		log_error(sprintf(gettext('%1$s is restoring the configuration %2$s'), $g['product_name'], $file));
-		file_notice("config.xml", sprintf(gettext('%1$s is restoring the configuration %2$s'), $g['product_name'], $file), "pfSenseConfigurator", "");
+		file_notice("config.xml", sprintf(gettext('%1$s is restoring the configuration %2$s'), $g['product_name'], $file), "OPNsenseConfigurator", "");
 		conf_mount_ro();
 	}
 }
@@ -208,7 +208,7 @@ function parse_config_bootup()
 			$last_backup = discover_last_backup();
 			if($last_backup) {
 				log_error("No config.xml found, attempting last known config restore.");
-				file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "pfSenseConfigurator", "");
+				file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "OPNsenseConfigurator", "");
 				restore_backup("/conf/backup/{$last_backup}");
 			}
 			if (!file_exists($config_xml)) {
@@ -218,7 +218,7 @@ function parse_config_bootup()
 				exit;
 			}
 			log_error("Last known config found and restored.  Please double check your configuration file for accuracy.");
-			file_notice("config.xml", gettext("Last known config found and restored.  Please double check your configuration file for accuracy."), "pfSenseConfigurator", "");
+			file_notice("config.xml", gettext("Last known config found and restored.  Please double check your configuration file for accuracy."), "OPNsenseConfigurator", "");
 		} else {
 			unlock($lockkey);
 			log_error(gettext("Could not find a usable configuration file! Exiting...."));
@@ -230,7 +230,7 @@ function parse_config_bootup()
 		$last_backup = discover_last_backup();
 		if ($last_backup) {
 			log_error(gettext("No config.xml found, attempting last known config restore."));
-			file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "pfSenseConfigurator", "");
+			file_notice("config.xml", gettext("No config.xml found, attempting last known config restore."), "OPNsenseConfigurator", "");
 			restore_backup("/conf/backup/{$last_backup}");
 		} else {
 			log_error(gettext('No config.xml found, attempting to restore factory config.'));
@@ -286,7 +286,7 @@ function conf_mount_rw()
 		$status = mwexec("/sbin/mount -u -w -o sync,noatime /cf");
 	}
 
-	/*    if the platform is soekris or wrap or pfSense, lets mount the
+	/*    if the platform is soekris or wrap or OPNsense, lets mount the
 	 *    compact flash cards root.
          */
 	$status = mwexec("/sbin/mount -u -w -o sync,noatime /");
@@ -324,7 +324,7 @@ function conf_mount_ro()
 
 	clear_subsystem_dirty('mount');
 	/* sync data, then force a remount of /cf */
-	pfSense_sync();
+	OPNsense_sync();
 	mwexec("/sbin/mount -u -r -f -o sync,noatime /cf");
 	mwexec("/sbin/mount -u -r -f -o sync,noatime /");
 }
@@ -427,7 +427,7 @@ function safe_write_file($file, $content, $force_binary) {
 	}
 
 	// Sync file before returning
-	pfSense_sync();
+	OPNsense_sync();
 
 	return true;
 }
@@ -708,7 +708,7 @@ function cleanup_backupcache($lock = false) {
 		$tocheck = array_shift(explode('.', array_pop(explode('-', $backup))));
 		if(!in_array($tocheck, $baktimes)) {
 			$i = true;
-			$newxml = parse_xml_config($backup, array($g['xml_rootobj'], 'pfsense'));
+			$newxml = parse_xml_config($backup, array($g['xml_rootobj'], 'OPNsense'));
 			if($newxml == "-1") {
 				log_error(sprintf(gettext("The backup cache file %s is corrupted.  Unlinking."), $backup));
 				unlink($backup);
@@ -869,7 +869,7 @@ function get_config_backup_count() {
 	}
 }
 
-function pfSense_clear_globals() {
+function OPNsense_clear_globals() {
 	global $config, $FilterIfList, $GatewaysList, $filterdns, $aliases, $aliastable;
 
 	if (isset($FilterIfList))
@@ -891,6 +891,6 @@ function pfSense_clear_globals() {
 	unset($config);
 }
 
-register_shutdown_function('pfSense_clear_globals');
+register_shutdown_function('OPNsense_clear_globals');
 
 ?>

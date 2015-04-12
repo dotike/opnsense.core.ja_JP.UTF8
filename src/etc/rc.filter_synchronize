@@ -83,7 +83,7 @@ function remove_special_characters($string) {
 	return $string;
 }
 
-function carp_check_version($url, $username, $password, $port = 80, $method = 'pfsense.host_firmware_version') {
+function carp_check_version($url, $username, $password, $port = 80, $method = 'opnsense.host_firmware_version') {
 	global $config, $g;
 
 	if (file_exists('/var/run/booting')) {
@@ -134,7 +134,7 @@ function carp_check_version($url, $username, $password, $port = 80, $method = 'p
 	return false;
 }
 
-function carp_sync_xml($url, $username, $password, $sections, $port = 80, $method = 'pfsense.restore_config_section') {
+function carp_sync_xml($url, $username, $password, $sections, $port = 80, $method = 'opnsense.restore_config_section') {
 	global $config, $g;
 
 	if (file_exists('/var/run/booting')) {
@@ -415,7 +415,7 @@ if (is_array($config['hasync'])) {
 	  XML_RPC_encode($hasync['password'])
 	);
 
-	$msg = new XML_RPC_Message('pfsense.filter_configure', $params);
+	$msg = new XML_RPC_Message('opnsense.filter_configure', $params);
 	$cli->setCredentials($username, $hasync['password']);
 	$resp = $cli->send($msg, "900");
 

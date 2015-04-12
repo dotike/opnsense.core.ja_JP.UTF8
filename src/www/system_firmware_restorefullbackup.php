@@ -134,7 +134,7 @@ include("head.inc");
 
                                 <?php
 						chdir("/root");
-						$available_restore_files = glob("pfSense-full-backup-*");
+						$available_restore_files = glob("OPNsense-full-backup-*");
 						$counter = 0;
 						foreach($available_restore_files as $arf) {
 							$counter++;

@@ -2010,7 +2010,7 @@ $types6 = array("none" => gettext("None"), "staticv6" => gettext("Static IPv6"),
 																Initial Interval: <input name="adv_dhcp_pt_initial_interval" type="text" class="form-control unknown" id="adv_dhcp_pt_initial_interval" size="2" value="<?=htmlspecialchars($pconfig['adv_dhcp_pt_initial_interval']);?>" onchange="customdhcpptcheckradiobuton(document.iform.adv_dhcp_pt_values, '');" />
 
 																&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-																<input name="adv_dhcp_pt_values" type="radio" value="pfSense"	id="customdhcpptpfsensedefaults"	onclick="customdhcpptsetvalues(this, iform);" />OPNsense Default &nbsp;
+																<input name="adv_dhcp_pt_values" type="radio" value="pfSense"	id="customdhcpptopnsensedefaults"	onclick="customdhcpptsetvalues(this, iform);" />OPNsense Default &nbsp;
 																<input name="adv_dhcp_pt_values" type="radio" value="SavedCfg" checked="checked"	id="customdhcpptsavedcfg"		onclick="customdhcpptsetvalues(this, iform);" />Saved Cfg
 
 																<br />

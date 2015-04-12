@@ -2966,7 +2966,7 @@ class dnpipe_class extends dummynet_class {
 		foreach ($this->subqueues as $q)
 			$q->delete_queue();
 		unset_dn_object_by_reference($this->GetLink());
-		@pfSense_pipe_action("pipe delete " . $this->GetNumber());
+		@OPNsense_pipe_action("pipe delete " . $this->GetNumber());
 	}
 	function GetBandwidth() {
 		return $this->qbandwidth;
@@ -3510,7 +3510,7 @@ class dnqueue_class extends dummynet_class {
 	function delete_queue() {
 		cleanup_dnqueue_from_rules($this->GetQname());
 		unset_dn_object_by_reference($this->GetLink());
-		@pfSense_pipe_action("queue delete " . $this->GetNumber());
+		@OPNsense_pipe_action("queue delete " . $this->GetNumber());
 	}
 
 	function validate_input($data, &$input_errors) {

@@ -298,7 +298,7 @@ if ($_POST) {
 	}
 
 	// Allow extending of the firewall edit page and include custom input validation
-	pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/input_validation");
+	OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/input_validation");
 
 	if (!$input_errors) {
 		$natent = array();
@@ -417,7 +417,7 @@ if ($_POST) {
 		$natent['updated'] = make_config_revision_entry();
 
 		// Allow extending of the firewall edit page and include custom input validation
-		pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_write_config");
+		OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_write_config");
 
 		// Update the NAT entry now
 		if (isset($id) && $a_nat[$id])
@@ -474,7 +474,7 @@ include("head.inc");
 									</tr>
 					<?php
 							// Allow extending of the firewall edit page and include custom input validation
-							pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/htmlphpearly");
+							OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/htmlphpearly");
 					?>
 							<tr>
 								<td width="22%" valign="top" class="vncellreq"><?=gettext("Disabled"); ?></td>
@@ -500,7 +500,7 @@ include("head.inc");
 
 											$iflist = get_configured_interface_with_descr(false, true);
 											// Allow extending of the firewall edit interfaces
-											pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_interfaces_edit");
+											OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_interfaces_edit");
 											foreach ($iflist as $if => $ifdesc)
 												if(have_ruleint_access($if))
 													$interfaces[$if] = $ifdesc;
@@ -873,7 +873,7 @@ include("head.inc");
 					                </tr><?php endif; ?>
 					<?php
 							// Allow extending of the firewall edit page and include custom input validation
-							pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/htmlphplate");
+							OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/htmlphplate");
 					?>
 					<?php
 					$has_created_time = (isset($a_nat[$id]['created']) && is_array($a_nat[$id]['created']));

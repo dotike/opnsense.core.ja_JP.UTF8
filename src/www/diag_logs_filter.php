@@ -204,7 +204,7 @@ include("head.inc");
 										$iflist = get_configured_interface_with_descr(false, true);
 										//$iflist = get_interface_list();
 										// Allow extending of the firewall edit interfaces
-										pfSense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_interfaces_edit");
+										OPNsense_handle_custom_code("/usr/local/pkg/firewall_nat/pre_interfaces_edit");
 										foreach ($iflist as $if => $ifdesc)
 											$interfaces[$if] = $ifdesc;
 
@@ -392,7 +392,7 @@ include("head.inc");
 							<input id="submit" name="clear" type="submit" class="btn btn-primary" value="<?=gettext("Clear log");?>" />
 						</form>
 
-						<p><span class="vexpl"><a href="https://doc.pfsense.org/index.php/What_are_TCP_Flags%3F">TCP Flags</a>: F - FIN, S - SYN, A or . - ACK, R - RST, P - PSH, U - URG, E - ECE, W - CWR</span></p>
+						<p><span class="vexpl"><a href="http://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP Flags</a>: F - FIN, S - SYN, A or . - ACK, R - RST, P - PSH, U - URG, E - ECE, W - CWR</span></p>
 
 
 						</div>

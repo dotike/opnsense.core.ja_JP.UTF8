@@ -141,7 +141,7 @@ function enable_hardware_offloading($interface) {
 	$supported_ints = array('fxp');
 	if (in_array($int_family, $supported_ints)) {
 		if(does_interface_exist($int))
-			pfSense_interface_flags($int, IFF_LINK0);
+			OPNsense_interface_flags($int, IFF_LINK0);
 	}
 
 	return;
@@ -158,7 +158,7 @@ function enable_hardware_offloading($interface) {
  *
  ******/
 function interface_supports_polling($iface) {
-	$opts = pfSense_get_interface_addresses($iface);
+	$opts = OPNsense_get_interface_addresses($iface);
 	if (is_array($opts) && isset($opts['caps']['polling']))
 		return true;
 
@@ -479,8 +479,8 @@ function restore_config_section($section_name, $new_contents)
 	fclose($fout);
 
 	$xml = parse_xml_config($tmpxml, null);
-	if ($xml['pfsense']) {
-		$xml = $xml['pfsense'];
+	if ($xml['opnsense']) {
+		$xml = $xml['opnsense'];
 	} elseif ($xml['m0n0wall']) {
 		$xml = $xml['m0n0wall'];
 	}
@@ -600,9 +600,9 @@ function rmdir_recursive($path,$follow_links=false) {
 }
 
 /*
- * call_pfsense_method(): Call a method exposed by the pfsense.org XMLRPC server.
+ * call_opnsense_method(): Call a method exposed by the an XMLRPC server.
  */
-function call_pfsense_method($method, $params, $timeout = 0) {
+function call_opnsense_method($method, $params, $timeout = 0) {
 	global $g, $config;
 
 	$xmlrpc_base_url = get_active_xml_rpc_base_url();
@@ -680,7 +680,7 @@ function check_firmware_version($tocheck = "all", $return_php = true) {
 		$params['branch'] = $config['system']['firmware']['branch'];
 
 	/* XXX: What is this method? */
-	if(!($versions = call_pfsense_method('pfsense.get_firmware_version', $params))) {
+	if(!($versions = call_opnsense_method('opnsense.get_firmware_version', $params))) {
 		return false;
 	} else {
 		$versions["current"] = $params;
@@ -1105,7 +1105,7 @@ function get_interface_info($ifdescr) {
 	$ifinfo['if'] = get_real_interface($ifdescr);
 
 	$chkif = $ifinfo['if'];
-	$ifinfotmp = pfSense_get_interface_addresses($chkif);
+	$ifinfotmp = OPNsense_get_interface_addresses($chkif);
 	$ifinfo['status'] = $ifinfotmp['status'];
 	if (empty($ifinfo['status']))
 		$ifinfo['status'] = "down";
@@ -1117,7 +1117,7 @@ function get_interface_info($ifdescr) {
 	$ifinfo['subnetv6'] = get_interface_subnetv6($ifdescr);
 	if (isset($ifinfotmp['link0']))
 		$link0 = "down";
-	$ifinfotmp = pfSense_get_interface_stats($chkif);
+	$ifinfotmp = OPNsense_get_interface_stats($chkif);
 	// $ifinfo['inpkts'] = $ifinfotmp['inpkts'];
 	// $ifinfo['outpkts'] = $ifinfotmp['outpkts'];
 	$ifinfo['inerrs'] = $ifinfotmp['inerrs'];
@@ -1404,7 +1404,7 @@ function is_fqdn($fqdn) {
 	return($hostname);
 }
 
-function pfsense_default_state_size() {
+function opnsense_default_state_size() {
 	/* get system memory amount */
 	$memory = get_memory();
 	$physmem = $memory[0];
@@ -1413,12 +1413,12 @@ function pfsense_default_state_size() {
 	return $max_states;
 }
 
-function pfsense_default_tables_size() {
+function opnsense_default_tables_size() {
 	$current = `pfctl -sm | grep ^tables | awk '{print $4};'`;
 	return $current;
 }
 
-function pfsense_default_table_entries_size() {
+function opnsense_default_table_entries_size() {
 	$current = `pfctl -sm | grep table-entries | awk '{print $4};'`;
 	return $current;
 }
@@ -2024,10 +2024,10 @@ function get_real_slice_from_glabel($label) {
 	return trim(`/sbin/glabel list | /usr/bin/grep -B2 ufs/{$label} | /usr/bin/head -n 1 | /usr/bin/cut -f3 -d' '`);
 }
 function nanobsd_get_boot_slice() {
-	return trim(`/sbin/mount | /usr/bin/grep pfsense | /usr/bin/cut -d'/' -f4 | /usr/bin/cut -d' ' -f1`);
+	return trim(`/sbin/mount | /usr/bin/grep opnsense | /usr/bin/cut -d'/' -f4 | /usr/bin/cut -d' ' -f1`);
 }
 function nanobsd_get_boot_drive() {
-	return trim(`/sbin/glabel list | /usr/bin/grep -B2 ufs/pfsense | /usr/bin/head -n 1 | /usr/bin/cut -f3 -d' ' | /usr/bin/cut -d's' -f1`);
+	return trim(`/sbin/glabel list | /usr/bin/grep -B2 ufs/opnsense | /usr/bin/head -n 1 | /usr/bin/cut -f3 -d' ' | /usr/bin/cut -d's' -f1`);
 }
 function nanobsd_get_active_slice() {
 	$boot_drive = nanobsd_get_boot_drive();
@@ -2055,13 +2055,13 @@ function nanobsd_switch_boot_slice() {
 	if(strstr($slice, "s2")) {
 		$ASLICE="2";
 		$AOLDSLICE="1";
-		$AGLABEL_SLICE="pfsense1";
+		$AGLABEL_SLICE="opnsense1";
 		$AUFS_ID="1";
 		$AOLD_UFS_ID="0";
 	} else {
 		$ASLICE="1";
 		$AOLDSLICE="2";
-		$AGLABEL_SLICE="pfsense0";
+		$AGLABEL_SLICE="opnsense0";
 		$AUFS_ID="0";
 		$AOLD_UFS_ID="1";
 	}
@@ -2119,7 +2119,7 @@ EOF;
 		else
 			$status = false;
 	} else {
-		$status = exec("sed -i \"\" \"s/pfsense{$oldufs}/pfsense{$newufs}/g\" {$fstabpath}");
+		$status = exec("sed -i \"\" \"s/opnsense{$oldufs}/opnsense{$newufs}/g\" {$fstabpath}");
 	}
 	exec("/sbin/umount {$tmppath}");
 	rmdir($tmppath);
@@ -2140,14 +2140,14 @@ function nanobsd_detect_slice_info() {
 	if(strstr($REAL_BOOT_DEVICE, "s1")) {
 		$SLICE="2";
 		$OLDSLICE="1";
-		$GLABEL_SLICE="pfsense1";
+		$GLABEL_SLICE="opnsense1";
 		$UFS_ID="1";
 		$OLD_UFS_ID="0";
 
 	} else {
 		$SLICE="1";
 		$OLDSLICE="2";
-		$GLABEL_SLICE="pfsense0";
+		$GLABEL_SLICE="opnsense0";
 		$UFS_ID="0";
 		$OLD_UFS_ID="1";
 	}
@@ -2159,7 +2159,7 @@ function nanobsd_detect_slice_info() {
 
 function nanobsd_friendly_slice_name($slicename) {
 	global $g;
-	return strtolower(str_ireplace('pfsense', $g['product_name'], $slicename));
+	return strtolower(str_ireplace('opnsense', $g['product_name'], $slicename));
 }
 
 function get_include_contents($filename) {
@@ -2174,9 +2174,9 @@ function get_include_contents($filename) {
 }
 
 /* This xml 2 array function is courtesy of the php.net comment section on xml_parse.
- * it is roughly 4 times faster then our existing pfSense parser but due to the large
+ * it is roughly 4 times faster then our existing OPNsense parser but due to the large
  * size of the RRD xml dumps this is required.
- * The reason we do not use it for pfSense is that it does not know about array fields
+ * The reason we do not use it for OPNsense is that it does not know about array fields
  * which causes it to fail on array fields with single items. Possible Todo?
  */
 function xml2array($contents, $get_attributes = 1, $priority = 'tag')
@@ -2483,15 +2483,15 @@ function is_ipaddr_configured($ipaddr, $ignore_if = "", $check_localip = false, 
 	return false;
 }
 
-/****f* legacy/pfSense_handle_custom_code
+/****f* legacy/OPNsense_handle_custom_code
  * NAME
- *   pfSense_handle_custom_code
+ *   OPNsense_handle_custom_code
  * INPUTS
  *   directory name to process
  * RESULT
  *   globs the directory and includes the files
  */
-function pfSense_handle_custom_code($src_dir) {
+function OPNsense_handle_custom_code($src_dir) {
 	// Allow extending of the nat edit page and include custom input validation
 	if(is_dir("$src_dir")) {
 		$cf = glob($src_dir . "/*.inc");
@@ -2507,9 +2507,9 @@ function pfSense_handle_custom_code($src_dir) {
 function set_language($lang = 'en_US', $encoding = "UTF-8") {
 	putenv("LANG={$lang}.{$encoding}");
 	setlocale(LC_ALL, "{$lang}.{$encoding}");
-	textdomain("pfSense");
-	bindtextdomain("pfSense","/usr/local/share/locale");
-	bind_textdomain_codeset("pfSense","{$lang}.{$encoding}");
+	textdomain("OPNsense");
+	bindtextdomain("OPNsense","/usr/local/share/locale");
+	bind_textdomain_codeset("OPNsense","{$lang}.{$encoding}");
 }
 
 function get_locale_list()

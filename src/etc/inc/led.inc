@@ -8,8 +8,8 @@
  *
  */
 /*
-	pfSense_BUILDER_BINARIES:	/bin/echo
-	pfSense_MODULE:	utils
+	OPNsense_BUILDER_BINARIES:	/bin/echo
+	OPNsense_MODULE:	utils
 */
 
 $led_root = "/dev/led/led";

@@ -318,7 +318,7 @@ if ($_POST) {
 	unset($vertical_bar_err_text);
 
 	// Allow extending of the firewall edit page and include custom input validation
-	pfSense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/input_validation");
+	OPNsense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/input_validation");
 
 	if (!$input_errors) {
 		$alias['address'] = is_array($address) ? implode(" ", $address) : $address;
@@ -356,7 +356,7 @@ if ($_POST) {
 			update_alias_names_upon_change(array('aliases', 'alias'), array('address'), $_POST['name'], $origname);
 		}
 
-		pfSense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/pre_write_config");
+		OPNsense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/pre_write_config");
 
 		if (isset($id) && $a_aliases[$id]) {
 			if ($a_aliases[$id]['name'] <> $alias['name']) {
@@ -609,7 +609,7 @@ EOD;
 		<div class="container-fluid">
 			<div class="row">
 
-				<?php pfSense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/pre_input_errors"); ?>
+				<?php OPNsense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/pre_input_errors"); ?>
 				<?php if ($input_errors) print_input_errors($input_errors); ?>
 				<div id="inputerrors"></div>
 
@@ -654,7 +654,7 @@ EOD;
 												</span>
 											</td>
 										</tr>
-										<?php pfSense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/after_first_tr"); ?>
+										<?php OPNsense_handle_custom_code("/usr/local/pkg/firewall_aliases_edit/after_first_tr"); ?>
 										<tr>
 											<td width="22%" valign="top" class="vncell"><?=gettext("Description"); ?></td>
 											<td width="78%" class="vtable">

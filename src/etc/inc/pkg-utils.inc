@@ -32,7 +32,7 @@ require_once("globals.inc");
 require_once("xmlrpc.inc");
 require_once("service-utils.inc");
 require_once("xmlparse.inc");
-require_once("pfsense-utils.inc");
+require_once("opnsense-utils.inc");
 
 if(!function_exists("update_status")) {
 	function update_status($status) {
@@ -164,7 +164,7 @@ function get_pkg_info($pkgs = 'all', $info = 'all') {
 		"freebsd_version" => get_freebsd_version(),
 		"freebsd_machine" => $freebsd_machine
 	);
-	$resp = call_pfsense_method('pfsense.get_pkgs', $params, 10);
+	$resp = call_opnsense_method('opnsense.get_pkgs', $params, 10);
 	return $resp ? $resp : array();
 }
 
@@ -177,7 +177,7 @@ function get_pkg_sizes($pkgs = 'all') {
 		"freebsd_version" => get_freebsd_version(),
 		"freebsd_machine" => $freebsd_machine
 	);
-	$msg = new XML_RPC_Message('pfsense.get_pkg_sizes', array(php_value_to_xmlrpc($params)));
+	$msg = new XML_RPC_Message('opnsense.get_pkg_sizes', array(php_value_to_xmlrpc($params)));
 	$xmlrpc_base_url = get_active_xml_rpc_base_url();
 	$cli = new XML_RPC_Client($g['xmlrpcpath'], $xmlrpc_base_url);
 	$resp = $cli->send($msg, 10);
@@ -474,7 +474,7 @@ function pkg_fetch_recursive($pkgname, $filename, $dependlevel = 0, $base_url = 
 
 		/* FreeBSD has no PBI's hosted, so fall back to our own URL for now. (Maybe fail to PC-BSD?) */
 		$rel = get_freebsd_version();
-		$priv_url = "https://files.pfsense.org/packages/{$rel}/All/";
+		$priv_url = "https://files.opnsense.org/packages/{$rel}/All/";
 		if (empty($base_url))
 			$base_url = $priv_url;
 		if (substr($base_url, -1) == "/")
@@ -1248,7 +1248,7 @@ function stop_packages()
 	require_once("shaper.inc");
 	require_once("captiveportal.inc");
 	require_once("pkg-utils.inc");
-	require_once("pfsense-utils.inc");
+	require_once("opnsense-utils.inc");
 	require_once("service-utils.inc");
 
 	global $config, $g;
@@ -1292,7 +1292,7 @@ function stop_packages()
 function package_skip_tests($index,$requested_version){
 	global $config, $g;
 
-	/* Get pfsense version*/
+	/* Get OPNssense version*/
 	$version = rtrim(file_get_contents("/usr/local/opnsense/version/opnsense"));
 
 	if($g['platform'] == "nanobsd")
@@ -1348,7 +1348,7 @@ function verify_all_package_servers() {
 function verify_package_server($server) {
 	/* Define the expected default package server domains. Include
 		preceding "." to prevent matching from being too liberal. */
-	$default_package_domains = array('.pfsense.org', '.pfsense.com', '.netgate.com');
+	$default_package_domains = array('.opnsense.org', '.opnsense.com');
 
 	/* For this test we only need to check the hostname. */
 	$xmlrpcbase = parse_url($server, PHP_URL_HOST);

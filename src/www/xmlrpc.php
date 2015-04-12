@@ -59,7 +59,7 @@ $xmlrpc_g = array(
 );
 
 /*
- *   pfSense XMLRPC errors
+ *   OPNsense XMLRPC errors
  *   $XML_RPC_erruser + 1 = Auth failure
  */
 $XML_RPC_erruser = 200;
@@ -262,7 +262,7 @@ function restore_config_section_xmlrpc($raw_params) {
 		foreach ($oldvips as $oldvipif => $oldvippar) {
 			$oldvipif = get_real_interface($oldvippar['interface']);
 			if (!empty($oldvipif))
-				pfSense_interface_deladdress($oldvipif, $oldvipar['subnet']);
+				OPNsense_interface_deladdress($oldvipif, $oldvipar['subnet']);
 		}
 		if ($carp_setuped == true)
 			interfaces_carp_setup();
@@ -424,16 +424,16 @@ function check_firmware_version_xmlrpc($raw_params) {
 }
 
 /*****************************/
-$pfsense_firmware_version_doc = gettext("Basic XMLRPC wrapper for check_firmware_version. This function will return the output of check_firmware_version upon completion.");
+$opnsense_firmware_version_doc = gettext("Basic XMLRPC wrapper for check_firmware_version. This function will return the output of check_firmware_version upon completion.");
 
-$pfsense_firmware_version_sig = array (
+$opnsense_firmware_version_sig = array (
         array (
                 $XML_RPC_Struct,
                 $XML_RPC_String
         )
 );
 
-function pfsense_firmware_version_xmlrpc($raw_params) {
+function opnsense_firmware_version_xmlrpc($raw_params) {
         global $xmlrpc_g;
 
         $params = xmlrpc_params_to_php($raw_params);
@@ -496,39 +496,39 @@ $xmlrpclockkey = lock('xmlrpc', LOCK_EX);
 /*****************************/
 $server = new XML_RPC_Server(
         array(
-		'pfsense.exec_shell' => array('function' => 'exec_shell_xmlrpc',
+		'opnsense.exec_shell' => array('function' => 'exec_shell_xmlrpc',
 			'signature' => $exec_shell_sig,
 			'docstring' => $exec_shell_doc),
-		'pfsense.exec_php' => array('function' => 'exec_php_xmlrpc',
+		'opnsense.exec_php' => array('function' => 'exec_php_xmlrpc',
 			'signature' => $exec_php_sig,
 			'docstring' => $exec_php_doc),
-		'pfsense.filter_configure' => array('function' => 'filter_configure_xmlrpc',
+		'opnsense.filter_configure' => array('function' => 'filter_configure_xmlrpc',
 			'signature' => $filter_configure_sig,
 			'docstring' => $filter_configure_doc),
-		'pfsense.interfaces_carp_configure' => array('function' => 'interfaces_carp_configure_xmlrpc',
+		'opnsense.interfaces_carp_configure' => array('function' => 'interfaces_carp_configure_xmlrpc',
 			'docstring' => $carp_configure_sig),
-		'pfsense.backup_config_section' => array('function' => 'backup_config_section_xmlrpc',
+		'opnsense.backup_config_section' => array('function' => 'backup_config_section_xmlrpc',
 			'signature' => $backup_config_section_sig,
 			'docstring' => $backup_config_section_doc),
-		'pfsense.restore_config_section' => array('function' => 'restore_config_section_xmlrpc',
+		'opnsense.restore_config_section' => array('function' => 'restore_config_section_xmlrpc',
 			'signature' => $restore_config_section_sig,
 			'docstring' => $restore_config_section_doc),
-		'pfsense.merge_config_section' => array('function' => 'merge_config_section_xmlrpc',
+		'opnsense.merge_config_section' => array('function' => 'merge_config_section_xmlrpc',
 			'signature' => $merge_config_section_sig,
 			'docstring' => $merge_config_section_doc),
-		'pfsense.merge_installedpackages_section_xmlrpc' => array('function' => 'merge_installedpackages_section_xmlrpc',
+		'opnsense.merge_installedpackages_section_xmlrpc' => array('function' => 'merge_installedpackages_section_xmlrpc',
 			'signature' => $merge_config_section_sig,
 			'docstring' => $merge_config_section_doc),
-		'pfsense.check_firmware_version' => array('function' => 'check_firmware_version_xmlrpc',
+		'opnsense.check_firmware_version' => array('function' => 'check_firmware_version_xmlrpc',
 			'signature' => $check_firmware_version_sig,
 			'docstring' => $check_firmware_version_doc),
-		'pfsense.host_firmware_version' => array('function' => 'pfsense_firmware_version_xmlrpc',
-			'signature' => $pfsense_firmware_version_sig,
+		'opnsense.host_firmware_version' => array('function' => 'opnsense_firmware_version_xmlrpc',
+			'signature' => $opnsense_firmware_version_sig,
 			'docstring' => $host_firmware_version_doc),
-		'pfsense.reboot' => array('function' => 'reboot_xmlrpc',
+		'opnsense.reboot' => array('function' => 'reboot_xmlrpc',
 			'signature' => $reboot_sig,
 			'docstring' => $reboot_doc),
-		'pfsense.get_notices' => array('function' => 'get_notices_xmlrpc',
+		'opnsense.get_notices' => array('function' => 'get_notices_xmlrpc',
 			'signature' => $get_notices_sig)
         )
 );

@@ -49,7 +49,7 @@ if (isset($_POST['act']))
 if ($_GET['act'] == "del") {
 
 	if (!$a_csc[$id]) {
-		pfSenseHeader("vpn_openvpn_csc.php");
+		OPNsenseHeader("vpn_openvpn_csc.php");
 		exit;
 	}
 

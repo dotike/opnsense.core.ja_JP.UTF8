@@ -76,7 +76,7 @@ function restore_rrd()
 			@unlink($xml_file);
 		}
 		/* If this backup is still there on a full install, but we aren't going to use ram disks, remove the archive since this is a transition. */
-		if (($g['platform'] == "pfSense") && !isset($config['system']['use_mfs_tmpvar'])) {
+		if (($g['platform'] == "OPNsense") && !isset($config['system']['use_mfs_tmpvar'])) {
 			unlink_if_exists('/conf/rrd.tgz');
 		}
 		return true;
@@ -923,7 +923,7 @@ function enable_rrd_graphing() {
 
 }
 
-# Create gateway quality RRD with settings suitable for pfSense graph set.
+# Create gateway quality RRD with settings suitable for OPNsense graph set.
 function create_gateway_quality_rrd($rrd_file) {
 	global $g;
 	$rrdinterval = 60;

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILENAME="pfSense-full-backup-`date "+%Y%m%d-%H%M"`.tgz"
+FILENAME="OPNsense-full-backup-`date "+%Y%m%d-%H%M"`.tgz"
 echo ">>> Creating full backup to /root/$FILENAME"
 tar czPf /root/$FILENAME \
 	--exclude dev/* \

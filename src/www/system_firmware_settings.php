@@ -181,7 +181,7 @@ function enable_altfirmwareurl(enable_over) {
                             </tbody>
                         </table>
 
-                        <?php if(file_exists("/usr/local/bin/git") && $g['platform'] == "pfSense"): ?>
+                        <?php if(file_exists("/usr/local/bin/git") && $g['platform'] == "OPNsense"): ?>
                         <table class="table table-striped" width="100%" border="0" cellpadding="6" cellspacing="0" summary="main area" style="display:none"> <!--Unsupported Feuature, hide it-->
 
                             <thead>
@@ -201,8 +201,8 @@ function enable_altfirmwareurl(enable_over) {
 					</td>
 				</tr>
                                 <?php
-					if(is_dir("/root/pfsense/pfSenseGITREPO/pfSenseGITREPO")) {
-						exec("cd /root/pfsense/pfSenseGITREPO/pfSenseGITREPO && git config remote.origin.url", $output_str);
+					if(is_dir("/root/opnsense/OPNsenseGITREPO/OPNsenseGITREPO")) {
+						exec("cd /root/OPNsense/OPNsenseGITREPO/OPNsenseGITREPO && git config remote.origin.url", $output_str);
 						if(is_array($output_str) && !empty($output_str[0]))
 							$lastrepositoryurl = $output_str[0];
 						unset($output_str);
@@ -221,8 +221,8 @@ function enable_altfirmwareurl(enable_over) {
 					</td>
 				</tr>
                                 <?php
-					if(is_dir("/root/pfsense/pfSenseGITREPO/pfSenseGITREPO")) {
-						exec("cd /root/pfsense/pfSenseGITREPO/pfSenseGITREPO && git branch", $output_str);
+					if(is_dir("/root/opnsense/OPNsenseGITREPO/OPNsenseGITREPO")) {
+						exec("cd /root/opnsense/OPNsenseGITREPO/OPNsenseGITREPO && git branch", $output_str);
 						if(is_array($output_str)) {
 							foreach($output_str as $output_line) {
 								if(strstr($output_line, '* ')) {

@@ -154,7 +154,7 @@ if ($_POST && !is_subsystem_dirty('firmwarelock')) {
 					/* fire up the update script in the background */
 					mark_subsystem_dirty('firmwarelock');
 					$savemsg = gettext("The firmware is now being updated. The firewall will reboot automatically.");
-					mwexec_bg("/usr/local/etc/rc.firmware pfSenseupgrade {$g['upload_path']}/firmware.tgz");
+					mwexec_bg("/usr/local/etc/rc.firmware OPNsenseupgrade {$g['upload_path']}/firmware.tgz");
 				} else {
 					$savemsg = sprintf(gettext("Firmware image missing or other error, please try again %s."),$errortext);
 				}

@@ -29,8 +29,8 @@
 */
 
 /*
-	pfSense_BUILDER_BINARIES:	/usr/local/bin/voucher
-	pfSense_MODULE:	captiveportal
+	OPNsense_BUILDER_BINARIES:	/usr/local/bin/voucher
+	OPNsense_MODULE:	captiveportal
 */
 
 /* include all configuration functions */

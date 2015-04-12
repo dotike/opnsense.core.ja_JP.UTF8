@@ -396,8 +396,7 @@ SureGPS =		#Sure Electronics SKG16B
 												</select> <?php echo gettext("This option allows you to select a predefined configuration.");?>
 												<br />
 												<br />
-												<strong><?php echo gettext("Note: ");?></strong><?php echo gettext("Default is the configuration of pfSense 2.1 and earlier"); ?>
-												<?php echo gettext(" (not recommended). Select Generic if your GPS is not listed.)"); ?><br />
+												<strong><?php echo gettext("Note: ");?></strong><?php echo gettext("Select Generic if your GPS is not listed."); ?>
 												<strong><?php echo gettext("Note: ");?></strong><?php echo gettext("The perdefined configurations assume your GPS has already been set to NMEA mode."); ?>
 											</td>
 										</tr>

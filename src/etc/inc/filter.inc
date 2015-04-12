@@ -239,7 +239,7 @@ function filter_configure_sync($delete_states_if_needed = true)
 		$limitrules .= "set limit states {$config['system']['maximumstates']}\n";
 		$limitrules .= "set limit src-nodes {$config['system']['maximumstates']}\n";
 	} else {
-		$max_states = pfsense_default_state_size();
+		$max_states = OPNsense_default_state_size();
 		$limitrules .= "set limit states {$max_states}\n";
 		$limitrules .= "set limit src-nodes {$max_states}\n";
 	}
@@ -2462,7 +2462,7 @@ function filter_generate_user_rule($rule)
 		 *	# keep state
 		 *		works with TCP, UDP, and ICMP.
 		 *	# modulate state
-		 *		works only with TCP. pfSense will generate strong Initial Sequence Numbers (ISNs)
+		 *		works only with TCP. OPNsense will generate strong Initial Sequence Numbers (ISNs)
 		 *		for packets matching this rule.
 		 *	# synproxy state
 		 *		proxies incoming TCP connections to help protect servers from spoofed TCP SYN floods.

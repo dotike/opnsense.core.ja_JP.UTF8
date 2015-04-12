@@ -24,12 +24,12 @@
 	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGE.
 
-	pfSense_MODULE:	utils
+	OPNsense_MODULE:	utils
 
 */
 
 /*
- * The meta data format used in pfSense is denoted using markers
+ * The meta data format used in OPNsense is denoted using markers
  * followed by the appropriate value or value pair. All markers
  * are prefixed with a ##| sequence. The + suffix is used to
  * denote the beginning of a tag block followed by the tag name.

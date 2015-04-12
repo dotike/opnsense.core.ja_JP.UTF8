@@ -40,7 +40,7 @@ if (isset($_POST['userid']) && is_numericint($_POST['userid']))
 	$userid = $_POST['userid'];
 
 if (!isset($config['system']['user'][$userid]) && !is_array($config['system']['user'][$userid])) {
-	pfSenseHeader("system_usermanager.php");
+	OPNsenseHeader("system_usermanager.php");
 	exit;
 }
 
@@ -111,7 +111,7 @@ if (is_array($priv_list)) {
 	foreach($priv_list as $pname => $pdata) {
 		if (in_array($pname, $a_user['priv']))
 			continue;
-		$desc = addslashes(preg_replace("/pfSense/i", $g['product_name'], $pdata['descr']));
+		$desc = addslashes(preg_replace("/OPNsense/i", $g['product_name'], $pdata['descr']));
 		$jdescs .= "descs[{$id}] = '{$desc}';\n";
 		$id++;
 	}

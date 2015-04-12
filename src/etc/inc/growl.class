@@ -1,6 +1,6 @@
 <?PHP
 /*
-	pfSense_MODULE:	notifications
+	OPNsense_MODULE:	notifications
 */
 
     class Growl

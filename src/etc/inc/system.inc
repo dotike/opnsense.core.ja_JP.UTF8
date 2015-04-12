@@ -1388,7 +1388,7 @@ function system_ntp_configure($start_ntpd = true)
 		$config['ntpd'] = array();
 
 	$ntpcfg = "# \n";
-	$ntpcfg .= "# pfSense ntp configuration file \n";
+	$ntpcfg .= "# OPNsense ntp configuration file \n";
 	$ntpcfg .= "# \n\n";
 	$ntpcfg .= "tinker panic 0 \n";
 
@@ -1524,7 +1524,7 @@ function system_ntp_configure($start_ntpd = true)
 	unset($ts);
 
 	$ntpcfg .= "\n\n";
-	$ntpcfg .= "disable monitor\n"; //prevent NTP reflection attack, see https://forum.pfsense.org/index.php/topic,67189.msg389132.html#msg389132
+	$ntpcfg .= "disable monitor\n"; //prevent NTP reflection attack, see https://ics-cert.us-cert.gov/advisories/ICSA-14-051-04
 	if (!empty($config['ntpd']['clockstats']) || !empty($config['ntpd']['loopstats']) || !empty($config['ntpd']['peerstats'])) {
 		$ntpcfg .= "enable stats\n";
 		$ntpcfg .= 'statistics';
@@ -1753,7 +1753,7 @@ function system_set_harddisk_standby()
 		// Check for a numeric value
 		if (is_numeric($standby)) {
 			// Sync the disk(s)
-			pfSense_sync();
+			OPNsense_sync();
 			if (set_single_sysctl('hw.ata.standby', (int)$standby)) {
 				// Reinitialize ATA-drives
 				mwexec('/usr/local/sbin/atareinit');

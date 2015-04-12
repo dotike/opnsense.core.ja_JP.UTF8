@@ -78,7 +78,7 @@ remove_chflags() {
 }
 
 case $ACTION in
-pfSenseupgrade)
+OPNsenseupgrade)
 
 	# Sanity check - bail early if there's no firmware file!
 	if [ ! -r $IMG ]; then
@@ -90,9 +90,9 @@ pfSenseupgrade)
 	# wait 1 seconds before beginning
 	sleep 1
 
-	# Log that we are really doing a pfSense upgrade
+	# Log that we are really doing a OPNsense upgrade
 	echo "" >> /conf/upgrade_log.txt
-	echo "pfSenseupgrade upgrade starting" >> /conf/upgrade_log.txt
+	echo "OPNsenseupgrade upgrade starting" >> /conf/upgrade_log.txt
 	echo "" >> /conf/upgrade_log.txt
 
 	touch /var/run/firmwarelock.dirty

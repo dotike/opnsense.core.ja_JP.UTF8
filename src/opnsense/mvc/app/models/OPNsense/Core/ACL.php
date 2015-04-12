@@ -40,7 +40,7 @@ class ACL
     private $legacyGroupPrivs = array();
 
     /**
-     * temporary hack to support the old pfSense priv to page mapping.
+     * temporary hack to support the old OPNsense priv to page mapping.
      * @return array
      */
     private function loadLegacyPageMap()

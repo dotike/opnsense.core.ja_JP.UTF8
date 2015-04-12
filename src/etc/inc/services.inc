@@ -353,7 +353,7 @@ function services_dhcpdv4_configure()
 			}
 		}
 		/* If this backup is still there on a full install, but we aren't going to use ram disks, remove the archive since this is a transition. */
-		if (($g['platform'] == "pfSense") && !isset($config['system']['use_mfs_tmpvar'])) {
+		if (($g['platform'] == "OPNsense") && !isset($config['system']['use_mfs_tmpvar'])) {
 			unlink_if_exists('/conf/dhcpleases.tgz');
 		}
 	}
@@ -969,7 +969,7 @@ function services_dhcpdv6_configure($blacklist = array())
 		return 0;
 
 	if (file_exists("/var/run/booting")) {
-		if ($g['platform'] != "pfSense") {
+		if ($g['platform'] != "OPNsense") {
 			/* restore the leases, if we have them */
 			if (file_exists('/conf/dhcp6leases.tgz')) {
 				$dhcprestore = '';
@@ -983,7 +983,7 @@ function services_dhcpdv6_configure($blacklist = array())
 			}
 		}
 		/* If this backup is still there on a full install, but we aren't going to use ram disks, remove the archive since this is a transition. */
-		if (($g['platform'] == "pfSense") && !isset($config['system']['use_mfs_tmpvar'])) {
+		if (($g['platform'] == "OPNsense") && !isset($config['system']['use_mfs_tmpvar'])) {
 			unlink_if_exists('/conf/dhcp6leases.tgz');
 		}
 	}
@@ -1790,7 +1790,7 @@ function services_dnsmasq_configure()
 		if (isset($config['dnsmasq']['no_private_reverse'])) {
 			/* Note: Carrier Grade NAT (CGN) addresses 100.64.0.0/10 are intentionally not here. */
 			/* End-users should not be aware of CGN addresses, so reverse lookups for these should not happen. */
-			/* Just the pfSense WAN might get a CGN address from an ISP. */
+			/* Just the OPNsense WAN might get a CGN address from an ISP. */
 			$args .= " --server=/10.in-addr.arpa/ ";
 			$args .= " --server=/168.192.in-addr.arpa/ ";
 			/* Unfortunately the 172.16.0.0/12 range does not map nicely to the in-addr.arpa scheme. */
@@ -1937,14 +1937,14 @@ EOD;
 
 		$version = trim(file_get_contents('/usr/local/opnsense/version/opnsense'));
 		$platform = trim(file_get_contents('/usr/local/etc/platform'));
-		if (($platform == "pfSense") && ($g['product_name'] != "pfSense"))
+		if (($platform == "OPNsense") && ($g['product_name'] != "OPNsense"))
 			$platform = $g['product_name'];
 		$sysDescr = "{$g['product_name']} " . php_uname("n") .
 			" {$version} {$platform} " . php_uname("s") .
 			" " . php_uname("r") . " " . php_uname("m");
 
 		$snmpdconf .= <<<EOD
-system := 1     # pfSense
+system := 1     # OPNsense
 %snmpd
 sysDescr			= "{$sysDescr}"
 begemotSnmpdDebugDumpPdus       = 2
@@ -2232,7 +2232,7 @@ function configure_cron() {
 
 	for ($i = 0; $i < count($crontab_contents); $i++) {
 		$cron_item =& $crontab_contents[$i];
-		if (strpos($cron_item, "# pfSense specific crontab entries") !== false) {
+		if (strpos($cron_item, "# OPNsense specific crontab entries") !== false) {
 			array_splice($crontab_contents, $i - 1);
 			break;
 		}
@@ -2242,7 +2242,7 @@ function configure_cron() {
 
 	if (is_array($config['cron']['item'])) {
 		$crontab_contents .= "#\n";
-		$crontab_contents .= "# " . gettext("pfSense specific crontab entries") . "\n";
+		$crontab_contents .= "# " . gettext("OPNsense specific crontab entries") . "\n";
 		$crontab_contents .= "# " .gettext( "Created:") . " " . date("F j, Y, g:i a") . "\n";
 		$crontab_contents .= "#\n";
 

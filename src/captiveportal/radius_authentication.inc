@@ -38,7 +38,7 @@
 */
 
 /*
-	pfSense_MODULE:	captiveportal
+	OPNsense_MODULE:	captiveportal
 */
 
 /*

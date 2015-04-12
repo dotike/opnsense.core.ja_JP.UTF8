@@ -485,7 +485,7 @@ include("head.inc");
 								<tr>
 									<td colspan="2" valign="top" class="listtopic"><?=gettext("RAM Disk Settings (Reboot to Apply Changes)"); ?></td>
 								</tr>
-								<?php if ($g['platform'] == "pfSense"): ?>
+								<?php if ($g['platform'] == "OPNsense"): ?>
 								<tr>
 									<td width="22%" valign="top" class="vncell"><?=gettext("Use RAM Disks"); ?></td>
 									<td width="78%" class="vtable">
@@ -499,7 +499,7 @@ include("head.inc");
 								<tr>
 									<td width="22%" valign="top" class="vncell"><?=gettext("/tmp RAM Disk Size"); ?></td>
 									<td width="78%" class="vtable">
-										<input name="use_mfs_tmp_size" id="use_mfs_tmp_size" type="text" value="<?php if ($pconfig['use_mfs_tmp_size'] <> "") echo $pconfig['use_mfs_tmp_size']; ?>" class="formfld unknown" <?php if (($g['platform'] == "pfSense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> /> MB
+										<input name="use_mfs_tmp_size" id="use_mfs_tmp_size" type="text" value="<?php if ($pconfig['use_mfs_tmp_size'] <> "") echo $pconfig['use_mfs_tmp_size']; ?>" class="formfld unknown" <?php if (($g['platform'] == "OPNsense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> /> MB
 										<br />
 										<?=gettext("Set the size, in MB, for the /tmp RAM disk. " .
 										"Leave blank for 40MB. Do not set lower than 40."); ?>
@@ -508,7 +508,7 @@ include("head.inc");
 								<tr>
 									<td width="22%" valign="top" class="vncell"><?=gettext("/var RAM Disk Size"); ?></td>
 									<td width="78%" class="vtable">
-										<input name="use_mfs_var_size" id="use_mfs_var_size" type="text" value="<?php if ($pconfig['use_mfs_var_size'] <> "") echo $pconfig['use_mfs_var_size']; ?>" class="formfld unknown" <?php if (($g['platform'] == "pfSense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> /> MB
+										<input name="use_mfs_var_size" id="use_mfs_var_size" type="text" value="<?php if ($pconfig['use_mfs_var_size'] <> "") echo $pconfig['use_mfs_var_size']; ?>" class="formfld unknown" <?php if (($g['platform'] == "OPNsense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> /> MB
 										<br />
 										<?=gettext("Set the size, in MB, for the /var RAM disk. " .
 										"Leave blank for 60MB. Do not set lower than 60."); ?>
@@ -518,7 +518,7 @@ include("head.inc");
 									<td width="22%" valign="top" class="vncell"><?=gettext("Periodic RRD Backup");?></td>
 									<td width="78%" class="vtable">
 										<?=gettext("Frequency:");?>
-										<select name="rrdbackup" class="selectpicker" data-style="btn-default" id="rrdbackup" <?php if (($g['platform'] == "pfSense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> >
+										<select name="rrdbackup" class="selectpicker" data-style="btn-default" id="rrdbackup" <?php if (($g['platform'] == "OPNsense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> >
 											<option value='0' <?php if (!isset($config['system']['rrdbackup']) || ($config['system']['rrdbackup'] == 0)) echo "selected='selected'"; ?>><?=gettext("Disable"); ?></option>
 										<?php for ($x=1; $x<=24; $x++) { ?>
 											<option value='<?= $x ?>' <?php if ($config['system']['rrdbackup'] == $x) echo "selected='selected'"; ?>><?= $x ?> <?=gettext("hour"); ?><?php if ($x>1) echo "s"; ?></option>
@@ -534,7 +534,7 @@ include("head.inc");
 									<td width="22%" valign="top" class="vncell"><?=gettext("Periodic DHCP Leases Backup");?></td>
 									<td width="78%" class="vtable">
 										<?=gettext("Frequency:");?>
-										<select name="dhcpbackup" class="selectpicker" data-style="btn-default" id="dhcpbackup" <?php if (($g['platform'] == "pfSense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> >
+										<select name="dhcpbackup" class="selectpicker" data-style="btn-default" id="dhcpbackup" <?php if (($g['platform'] == "OPNsense") && ($pconfig['use_mfs_tmpvar'] == false)) echo "disabled=\"disabled\""; ?> >
 											<option value='0' <?php if (!isset($config['system']['dhcpbackup']) || ($config['system']['dhcpbackup'] == 0)) echo "selected='selected'"; ?>><?=gettext("Disable"); ?></option>
 										<?php for ($x=1; $x<=24; $x++) { ?>
 											<option value='<?= $x ?>' <?php if ($config['system']['dhcpbackup'] == $x) echo "selected='selected'"; ?>><?= $x ?> <?=gettext("hour"); ?><?php if ($x>1) echo "s"; ?></option>
@@ -547,7 +547,7 @@ include("head.inc");
 									</td>
 								</tr>
 
-								<?php if($g['platform'] == "pfSenseDISABLED"): ?>
+								<?php if($g['platform'] == "OPNsenseDISABLED"): ?>
 									<tr>
 										<th colspan="2" valign="top" class="listtopic"><?=gettext("Hardware Settings"); ?></th>
 									</tr>

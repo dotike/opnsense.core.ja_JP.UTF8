@@ -127,7 +127,7 @@ if ($_POST) {
 			unset($config['system']['disablebeep']);
 
 		write_config();
-		pfSenseHeader("system_advanced_notifications.php");
+		OPNsenseHeader("system_advanced_notifications.php");
 		return;
 
 	}

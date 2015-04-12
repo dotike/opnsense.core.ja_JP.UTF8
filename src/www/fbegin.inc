@@ -159,7 +159,7 @@ $system_menu[] = array(gettext("Advanced"), "/system_advanced_admin.php");
 $system_menu[] = array(gettext("Firmware"), "/system_firmware_check.php");
 $system_menu[] = array(gettext("General Setup"), "/system_general.php");
 $system_menu[] = array(gettext("High Avail. Sync"), "/system_hasync.php");
-//if ($g['platform'] == "pfSense" or $g['platform'] == "nanobsd")
+//if ($g['platform'] == "OPNsense" or $g['platform'] == "nanobsd")
 //	$system_menu[] = array(gettext("Packages"), "/system_pkg_mgr_installed.php");
 $system_menu[] = array(gettext("Setup Wizard"), "/wizard.php?xml=setup_wizard.xml");
 $system_menu[] = array(gettext("Routing"), "/system_gateways.php");
@@ -238,7 +238,7 @@ $status_menu[] = array(gettext("IPsec"), "/diag_ipsec.php");
 $status_menu[] = array(gettext("Load Balancer"), "/status_lb_pool.php");
 $status_menu[] = array(gettext("NTP"), "/status_ntpd.php");
 $status_menu[] = array(gettext("OpenVPN"), "/status_openvpn.php");
-//if ($g['platform'] == "pfSense")
+//if ($g['platform'] == "OPNsense")
 //	$status_menu[] = array(gettext("Package Logs"), "/diag_pkglogs.php"); // Remove currently unused feature
 $status_menu[] = array(gettext("Queues"), "/status_queues.php");
 $status_menu[] = array(gettext("RRD Graphs"), "/status_rrd_graph.php");

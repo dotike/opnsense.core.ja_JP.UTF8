@@ -29,7 +29,7 @@
 	POSSIBILITY OF SUCH DAMAGE.
 */
 /*
-	pfSense_MODULE:	captiveportal
+	OPNsense_MODULE:	captiveportal
 */
 
 require_once("auth.inc");
@@ -94,7 +94,7 @@ $passthrumac = isset($cpcfg['passthrumacadd']);
 
 /* find MAC address for client */
 if ($macfilter || $passthrumac) {
-	$tmpres = pfSense_ip_to_mac($clientip);
+	$tmpres = OPNsense_ip_to_mac($clientip);
 	if (!is_array($tmpres)) {
 		/* unable to find MAC address - shouldn't happen! - bail out */
 		captiveportal_logportalauth("unauthenticated","noclientmac",$clientip,"ERROR");
