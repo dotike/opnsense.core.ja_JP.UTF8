@@ -1,0 +1,12 @@
+This file is being constructed from sources in the branch,
+
+  locale.EN.canonical
+
+When the english .pot file is finished, the JP translation work can begin.
+
+この機械翻訳を言い訳をしてください。
+このファイルは、ブランチのソースから構築されている
+
+  locale.EN.canonical
+
+英語.POTファイルが終了すると、JPの翻訳作業を開始できます。

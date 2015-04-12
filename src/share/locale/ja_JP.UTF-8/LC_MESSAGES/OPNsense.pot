@@ -1,0 +1,13 @@
+This file is waiting for the English canoncal text to be finished,
+
+  src/share/locale/en/LC_MESSAGES/OPNsense.pot
+
+When it is done, this will be the JP translation file.
+
+
+この機械翻訳を言い訳をしてください。
+英語canoncalテキストが終了されるためにこのファイルには、待っている
+
+  SRC/共有/ロケール/ EN/ LC_MESSAGES/ OPNsense.pot
+
+それが完了すると、これはJP変換ファイルであろう。
