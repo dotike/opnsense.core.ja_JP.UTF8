@@ -10,7 +10,8 @@ Currently the canonical English gettext .pot file is being constructed from scra
 
 This work is nearly complete, with lots of manual work left to do,
 
-  src/share/locale/en/LC_MESSAGES/OPNsense.pot
+  branch: locale.EN.canonical
+  file:   src/share/locale/en/LC_MESSAGES/OPNsense.pot
 
 If you are Japanese/English bilingual, feel free to ask for repo access if you would like to help with this translation- (or just send us git formatted patch files to get going!)
 
@@ -29,7 +30,8 @@ STATUS：ENのクリーンアップのために停止したJP。
 
 手作業の多くが何を左にこの作品は、ほぼ完了です,
 
-  src/share/locale/en/LC_MESSAGES/OPNsense.pot
+  branch: locale.EN.canonical
+  file:   src/share/locale/en/LC_MESSAGES/OPNsense.pot
 
 あなたは日本の/英語のバイリンガルをしている場合は、このtranslation-を支援したい場合は、レポ·アクセスに気軽に（またはちょうど私達に軌道に乗るためにgitのフォーマットされたパッチファイルを送信！）
 
