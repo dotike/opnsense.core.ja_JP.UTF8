@@ -16,125 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
-
-#: src/www/diag_dns.php:29 src/www/crash_reporter.php:62
-#: src/www/diag_arp.php:246 src/www/diag_authentication.php:56
-#: src/www/diag_backup.php:541 src/www/diag_confbak.php:98
-#: src/www/diag_defaults.php:33 src/www/diag_dump_states.php:59
-#: src/www/diag_dump_states_sources.php:53 src/www/diag_gmirror.php:33
-#: src/www/diag_halt.php:35 src/www/diag_ndp.php:91
-#: src/www/diag_packet_capture.php:75 src/www/diag_patterns.php:52
-#: src/www/diag_ping.php:30 src/www/diag_resetstate.php:50
-#: src/www/diag_routes.php:57 src/www/diag_smart.php:32
-#: src/www/diag_sockets.php:32 src/www/diag_states_summary.php:180
-#: src/www/diag_tables.php:33 src/www/diag_testport.php:32
-#: src/www/diag_traceroute.php:32 src/www/fbegin.inc:399 src/www/reboot.php:34
-msgid "Diagnostics"
-msgstr ""
-
-#: src/www/diag_dns.php:29 src/www/diag_dns.php:265 src/www/fbegin.inc:231
-msgid "DNS Lookup"
-msgstr ""
-
-#: src/www/diag_dns.php:100
-msgid "Host must be a valid hostname or IP address."
-msgstr ""
-
-#: src/www/diag_dns.php:109
-msgid "No response"
-msgstr ""
-
-#: src/www/diag_dns.php:142
-msgid "No record found"
-msgstr ""
-
-#: src/www/diag_dns.php:150 src/www/diag_tables.php:138
-#: src/www/interfaces_ppps_edit.php:678
-#: src/www/load_balancer_virtual_server.php:133
-#: src/www/load_balancer_virtual_server_edit.php:61
-#: src/www/load_balancer_virtual_server_edit.php:66
-#: src/www/load_balancer_virtual_server_edit.php:179
-#: src/www/system_advanced_notifications.php:207
-msgid "IP Address"
-msgstr ""
-
-#: src/www/diag_dns.php:151 src/www/system_authservers.php:816
-msgid "Host Name"
-msgstr ""
-
-#: src/www/diag_dns.php:154 src/www/diag_dns.php:231
-#: src/www/diag_logs_settings.php:398 src/www/diag_logs_settings.php:402
-#: src/www/diag_logs_settings.php:406 src/www/services_rfc2136.php:83
-#: src/www/services_rfc2136_edit.php:199 src/www/status_ntpd.php:175
-#: src/www/vpn_ipsec_mobile.php:555 src/www/vpn_ipsec_mobile.php:561
-#: src/www/vpn_ipsec_mobile.php:567 src/www/vpn_ipsec_mobile.php:573
-#: src/www/vpn_ipsec_mobile.php:597 src/www/vpn_ipsec_mobile.php:603
-#: src/www/vpn_openvpn_client.php:446 src/www/vpn_openvpn_client.php:1109
-#: src/www/vpn_openvpn_csc.php:325 src/www/vpn_openvpn_csc.php:554
-#: src/www/vpn_openvpn_csc.php:562 src/www/vpn_openvpn_csc.php:570
-#: src/www/vpn_openvpn_csc.php:578 src/www/vpn_openvpn_csc.php:606
-#: src/www/vpn_openvpn_csc.php:614 src/www/vpn_openvpn_csc.php:701
-#: src/www/vpn_openvpn_csc.php:709 src/www/vpn_openvpn_export.php:585
-#: src/www/vpn_openvpn_export_shared.php:289
-#: src/www/vpn_openvpn_server.php:471 src/www/vpn_openvpn_server.php:745
-#: src/www/vpn_openvpn_server.php:1555 src/www/vpn_openvpn_server.php:1563
-#: src/www/vpn_openvpn_server.php:1571 src/www/vpn_openvpn_server.php:1579
-#: src/www/vpn_openvpn_server.php:1627 src/www/vpn_openvpn_server.php:1635
-#: src/www/vpn_openvpn_server.php:1723 src/www/vpn_openvpn_server.php:1731
-msgid "Server"
-msgstr ""
-
-#: src/www/diag_dns.php:154
-msgid "Query Time"
-msgstr ""
-
-#: src/www/diag_dns.php:181
-msgid "Resolve DNS hostname or IP"
-msgstr ""
-
-#: src/www/diag_dns.php:189 src/www/system_authservers.php:157
-#: src/www/system_authservers.php:180
-msgid "Hostname or IP"
-msgstr ""
-
-#: src/www/diag_dns.php:226
-msgid "Resolution time per server"
-msgstr ""
-
-#: src/www/diag_dns.php:232
-msgid "Query time"
-msgstr ""
-
-#: src/www/diag_dns.php:250
-msgid "More Information:"
-msgstr ""
-
-#: src/www/diag_dns.php:251 src/www/diag_ping.php:30 src/www/diag_ping.php:86
-#: src/www/diag_ping.php:131 src/www/fbegin.inc:238
-msgid "Ping"
-msgstr ""
-
-#: src/www/diag_dns.php:252 src/www/diag_traceroute.php:32
-#: src/www/diag_traceroute.php:94 src/www/diag_traceroute.php:147
-#: src/www/fbegin.inc:241
-msgid "Traceroute"
-msgstr ""
-
-#: src/www/diag_dns.php:254
-msgid ""
-"NOTE: The following links are to external services, so their reliability "
-"cannot be guaranteed."
-msgstr ""
-
-#: src/www/diag_dns.php:255
-msgid "IP WHOIS @ DNS Stuff"
-msgstr ""
-
-#: src/www/diag_dns.php:256
-msgid "IP Info @ DNS Stuff"
-msgstr ""
-
 #: src/etc/inc/auth.inc:108
 msgid ""
 "Potential DNS Rebind attack detected, see http://en.wikipedia.org/wiki/"
@@ -4698,6 +4579,21 @@ msgstr ""
 msgid "pfSync nodes"
 msgstr ""
 
+#: src/www/crash_reporter.php:62 src/www/diag_arp.php:246
+#: src/www/diag_authentication.php:56 src/www/diag_backup.php:541
+#: src/www/diag_confbak.php:98 src/www/diag_defaults.php:33
+#: src/www/diag_dns.php:29 src/www/diag_dump_states.php:59
+#: src/www/diag_dump_states_sources.php:53 src/www/diag_gmirror.php:33
+#: src/www/diag_halt.php:35 src/www/diag_ndp.php:91
+#: src/www/diag_packet_capture.php:75 src/www/diag_patterns.php:52
+#: src/www/diag_ping.php:30 src/www/diag_resetstate.php:50
+#: src/www/diag_routes.php:57 src/www/diag_smart.php:32
+#: src/www/diag_sockets.php:32 src/www/diag_states_summary.php:180
+#: src/www/diag_tables.php:33 src/www/diag_testport.php:32
+#: src/www/diag_traceroute.php:32 src/www/fbegin.inc:399 src/www/reboot.php:34
+msgid "Diagnostics"
+msgstr ""
+
 #: src/www/crash_reporter.php:62 src/www/fbegin.inc:230
 msgid "Crash Reporter"
 msgstr ""
@@ -5535,6 +5431,108 @@ msgstr ""
 
 #: src/www/diag_defaults.php:69
 msgid "Are you sure you want to proceed?"
+msgstr ""
+
+#: src/www/diag_dns.php:29 src/www/diag_dns.php:265 src/www/fbegin.inc:231
+msgid "DNS Lookup"
+msgstr ""
+
+#: src/www/diag_dns.php:100
+msgid "Host must be a valid hostname or IP address."
+msgstr ""
+
+#: src/www/diag_dns.php:109
+msgid "No response"
+msgstr ""
+
+#: src/www/diag_dns.php:142
+msgid "No record found"
+msgstr ""
+
+#: src/www/diag_dns.php:150 src/www/diag_tables.php:138
+#: src/www/interfaces_ppps_edit.php:678
+#: src/www/load_balancer_virtual_server.php:133
+#: src/www/load_balancer_virtual_server_edit.php:61
+#: src/www/load_balancer_virtual_server_edit.php:66
+#: src/www/load_balancer_virtual_server_edit.php:179
+#: src/www/system_advanced_notifications.php:207
+msgid "IP Address"
+msgstr ""
+
+#: src/www/diag_dns.php:151 src/www/system_authservers.php:816
+msgid "Host Name"
+msgstr ""
+
+#: src/www/diag_dns.php:154 src/www/diag_dns.php:231
+#: src/www/diag_logs_settings.php:398 src/www/diag_logs_settings.php:402
+#: src/www/diag_logs_settings.php:406 src/www/services_rfc2136.php:83
+#: src/www/services_rfc2136_edit.php:199 src/www/status_ntpd.php:175
+#: src/www/vpn_ipsec_mobile.php:555 src/www/vpn_ipsec_mobile.php:561
+#: src/www/vpn_ipsec_mobile.php:567 src/www/vpn_ipsec_mobile.php:573
+#: src/www/vpn_ipsec_mobile.php:597 src/www/vpn_ipsec_mobile.php:603
+#: src/www/vpn_openvpn_client.php:446 src/www/vpn_openvpn_client.php:1109
+#: src/www/vpn_openvpn_csc.php:325 src/www/vpn_openvpn_csc.php:554
+#: src/www/vpn_openvpn_csc.php:562 src/www/vpn_openvpn_csc.php:570
+#: src/www/vpn_openvpn_csc.php:578 src/www/vpn_openvpn_csc.php:606
+#: src/www/vpn_openvpn_csc.php:614 src/www/vpn_openvpn_csc.php:701
+#: src/www/vpn_openvpn_csc.php:709 src/www/vpn_openvpn_export.php:585
+#: src/www/vpn_openvpn_export_shared.php:289
+#: src/www/vpn_openvpn_server.php:471 src/www/vpn_openvpn_server.php:745
+#: src/www/vpn_openvpn_server.php:1555 src/www/vpn_openvpn_server.php:1563
+#: src/www/vpn_openvpn_server.php:1571 src/www/vpn_openvpn_server.php:1579
+#: src/www/vpn_openvpn_server.php:1627 src/www/vpn_openvpn_server.php:1635
+#: src/www/vpn_openvpn_server.php:1723 src/www/vpn_openvpn_server.php:1731
+msgid "Server"
+msgstr ""
+
+#: src/www/diag_dns.php:154
+msgid "Query Time"
+msgstr ""
+
+#: src/www/diag_dns.php:181
+msgid "Resolve DNS hostname or IP"
+msgstr ""
+
+#: src/www/diag_dns.php:189 src/www/system_authservers.php:157
+#: src/www/system_authservers.php:180
+msgid "Hostname or IP"
+msgstr ""
+
+#: src/www/diag_dns.php:226
+msgid "Resolution time per server"
+msgstr ""
+
+#: src/www/diag_dns.php:232
+msgid "Query time"
+msgstr ""
+
+#: src/www/diag_dns.php:250
+msgid "More Information:"
+msgstr ""
+
+#: src/www/diag_dns.php:251 src/www/diag_ping.php:30 src/www/diag_ping.php:86
+#: src/www/diag_ping.php:131 src/www/fbegin.inc:238
+msgid "Ping"
+msgstr ""
+
+#: src/www/diag_dns.php:252 src/www/diag_traceroute.php:32
+#: src/www/diag_traceroute.php:94 src/www/diag_traceroute.php:147
+#: src/www/fbegin.inc:241
+msgid "Traceroute"
+msgstr ""
+
+#: src/www/diag_dns.php:254
+msgid ""
+"NOTE: The following links are to external services, so their reliability "
+"cannot be guaranteed."
+msgstr ""
+
+#: src/www/diag_dns.php:255
+msgid "IP WHOIS @ DNS Stuff"
+msgstr ""
+
+#: src/www/diag_dns.php:256
+msgid "IP Info @ DNS Stuff"
 msgstr ""
 
 #: src/www/diag_dump_states.php:39 src/www/diag_dump_states_sources.php:39
