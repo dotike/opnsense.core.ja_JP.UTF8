@@ -1,17 +1,17 @@
-Sat Apr 11 19:23:26 EDT 2015
+Sun May 11 20:20:14 EDT 2015
 
-This is a temporary fork, created only to bootstrap the work necessary to translate OPNsense into the Japanese language.
+This fork was created only to begin the work necessary to translate OPNsense into the Japanese language.
 
 Discussions regarding this work should happen in the OPNsense Japanese forum!
 https://forum.opnsense.org/
 
-STATUS: JP stalled for EN cleanup. 
-Currently the canonical English gettext .pot file is being constructed from scratch, from the OPNsense sources.
+STATUS: JP is clear to go! EN base cleanup is complete.
 
-This work is nearly complete, with lots of manual work left to do,
+All languages can begin respective translations by copying the following file:
 
-  branch: locale.EN.canonical
-  file:   src/share/locale/en/LC_MESSAGES/OPNsense.pot
+  
+  https://github.com/opnsense/core/blob/master/src/share/locale/en/LC_MESSAGES/OPNsense.pot
+
 
 If you are Japanese/English bilingual, feel free to ask for repo access if you would like to help with this translation- (or just send us git formatted patch files to get going!)
 
@@ -20,20 +20,17 @@ If you are non-technical and bilingual, feel free to contact ike at blackskyrese
 --
 以下の私の機械翻訳を言い訳をしてください！
 
-これは日本の言語にOPNsenseを翻訳する必要な作業をブートストラップするだけ作成された一時的なフォーク、である。
+このフォークは、日本語にOPNsenseを翻訳する必要が作業を開始するためだけに作成されました。
 
-この作品に関する議論はOPNsense日本のフォーラムで起こるはず！
+この作品に関する議論はOPNsense日本語フォーラムで起こるはず！
 https://forum.opnsense.org/
 
-STATUS：ENのクリーンアップのために停止したJP。
-現在、ファイル.POT標準的な英語のgettextのはOPNsense源から、ゼロから構築されている。
+STATUS：JPが行くには明らかです！ ENベースのクリーンアップが完了しました。
 
-手作業の多くが何を左にこの作品は、ほぼ完了です,
+すべての言語は、次のファイルをコピーして、それぞれの翻訳を開始することができます：
 
-  branch: locale.EN.canonical
-  file:   src/share/locale/en/LC_MESSAGES/OPNsense.pot
+  https://github.com/opnsense/core/blob/master/src/share/locale/en/LC_MESSAGES/OPNsense.pot
 
-あなたは日本の/英語のバイリンガルをしている場合は、このtranslation-を支援したい場合は、レポ·アクセスに気軽に（またはちょうど私達に軌道に乗るためにgitのフォーマットされたパッチファイルを送信！）
+あなたは日本語/英語のバイリンガルである場合は、このtranslation-を支援したい場合は、レポ·アクセスにお気軽に（またはちょうど私達に軌道に乗るためにgitのフォーマットされたパッチファイルを送信します！）
 
-あなたが非技術とバイリンガルをしている場合、あなたは助けることができる場所を確認するblackskyresearchドットネットでIKEに連絡して自由に感じる。
-
+あなたは、非技術的なバイリンガルである場合、あなたは助けることができる場所を確認するためにblackskyresearchドットネットでIKEに連絡して自由に感じます。
