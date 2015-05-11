@@ -1,5 +1,7 @@
 Sun May 11 20:20:14 EDT 2015
 
+![Alt text](https://raw.githubusercontent.com/dotike/opnsense.core.ja_JP.UTF8/locale.ja_JP.UTF8/firstlook.png "First JP Look OPNsense")
+
 This fork was created only to begin the work necessary to translate OPNsense into the Japanese language.
 
 Discussions regarding this work should happen in the OPNsense Japanese forum!
