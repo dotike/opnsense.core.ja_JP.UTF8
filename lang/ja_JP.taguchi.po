@@ -11,13 +11,11 @@ msgstr ""
 "POT-Creation-Date: 2013-12-31 18:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Chie Taguchi <taguchi.ch@gmail.com>\n"
-"Language-Team: JAPANESE <foof@blackskyresearch.net>\n"
+"Language-Team: JAPANESE <ike@blackskyresearch.net>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: vim(1), awk(1), sed(1)\n, https://github.com/soimort/google-translate-cli"
-"X-Machinegen: translate.google.com"
 
 #: etc/inc/PEAR.inc:161
 #, php-format
