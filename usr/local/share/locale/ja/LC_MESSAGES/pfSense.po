@@ -1,7 +1,7 @@
-# Language translation for pfSense project.
+# Legacy JP translation.
 # Copyright (C) 2011 BSD Perimeter
-# This file is distributed under the same license as the pfSense package.
-# Kiyo Takami and Isaac (.ike) Levy, 2013.
+# Copyright (C) 2013, 2014, 2015 Chie Taguchi, Kiyo Takami, and Isaac (.ike) Levy
+# This file is distributed under the same BSD license as the OPNsense project.
 #
 #, fuzzy
 msgid ""
