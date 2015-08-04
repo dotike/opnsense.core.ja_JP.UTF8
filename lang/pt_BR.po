@@ -1,16 +1,18 @@
 # Language translation for OPNsense project.
 # Copyright (C) 2011-2014 Electric Sheep Fencing LLC
+# Copyright (C) 2015 Isaac (.ike) Levy
 # This file is distributed under the same license as the OPNsense package.
 # Vinicius Coque <vcoque@gmail.com>, 2011.
 # Luiz Gustavo <luizgustavo@luizgustavo.pro>, 2014 Powered by: TrustUX Network (www.trustux.com)
+# Isaac (.ike) Levy <ike@blackskyresearch.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 16:01+0200\n"
-"PO-Revision-Date: 2014-02-28 14:46-0300\n"
-"Last-Translator: Luiz Gustavo <luizgustavo@luizgustavo.pro.br>\n"
-"Language-Team: Powered By: TrustUX Network <www.trustux.com>\n"
+"POT-Creation-Date: 2015-08-04 16:01+0000\n"
+"PO-Revision-Date: 2015-08-04 16:01+0000\n"
+"Last-Translator: Isaac (.ike) Levy <ike@blackskyresearch.net>\n"
+"Language-Team: Powered By: https://forum.opnsense.org/index.php?board=10.0\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO8859-1\n"
