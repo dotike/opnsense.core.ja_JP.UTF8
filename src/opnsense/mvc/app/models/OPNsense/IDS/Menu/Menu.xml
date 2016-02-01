@@ -1,5 +1,0 @@
-<menu>
-    <Services>
-        <IDS VisibleName="Intrusion Detection" url="/ui/ids/" cssClass="fa fa-shield fa-fw"/>
-    </Services>
-</menu>
