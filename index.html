@@ -24,13 +24,13 @@
         <strong>1214</strong> of 5139 lines remaining...</strong></p>
 <!-- $ grep '^msgid "' src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po | wc -l ; grep '^msgstr ""$' src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po | wc -l -->
 
-         <p>Just one big <a href="https://github.com/dotike/opnsense.core.ja_JP.UTF8/blob/master/src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po">.po file</a>,
-         along with <a href="https://opnsense.org/about/legal-notices/">OPNsense, BSD Licenced</a>.</p>
+         <p>Just one big <a href="https://github.com/opnsense/core/blob/master/lang/ja_JP.po">.po file</a> all, BSD Licenced</a>.</p>
 
         <ul>
           <li><a href="https://opnsense.org/download/">ダウンロード<strong>OPNsense</strong></a></li>
           <li><a href="https://forum.opnsense.org/index.php?board=13.0">フォーラム <strong>Forums</strong></a></li>
-          <li><a href="https://github.com/dotike/opnsense.core.ja_JP.UTF8">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/opnsense/core/blob/master/lang/ja_JP.po">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://translate.opnsense.org/">Translation Server<strong>Pootle</strong></a></li>
         </ul>
 
       </header>
@@ -38,10 +38,14 @@
         <h3>
 <a id="welcome-to-the-japanese-opnsense-translation-project" class="anchor" href="#welcome-to-the-japanese-opnsense-translation-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>日本OPNsense翻訳プロジェクトへようこそ。<br>Welcome to the Japanese OPNsense Translation project.</h3>
 
-<p>このフォークは、日本語にOPNsenseを翻訳する必要が作業を開始するためだけに作成されました。我々はOPNsenseコアを次し、GitHubの中で彼らにプル要求を送信することによって動作します。
-<br>This fork was created only to begin the work necessary to translate OPNsense into the Japanese language.  We work by following OPNsense core, and submitting Pull Requests to them in GitHub.</p>
+<p>OPNsenseプロジェクトは、日本語にOPNsenseユーザーインターフェイスを翻訳助けを探しています。単にGitHubのにOPNsenseにプル要求を送信します。
+<br>The OPNsense project is looking for help translating the OPNsense User Interface into the Japanese language.  Simply submit Pull Requests to OPNsense in GitHub.</p>
 
-<p><img src="http://dotike.github.io/opnsense.core.ja_JP.UTF8/images/firstlook.png" alt=""></p>
+
+<p>Japanese is currnetly a functional language in OPNsense, starting with the 15.x releases.<br>
+<img src="http://dotike.github.io/opnsense.core.ja_JP.UTF8/images/firstlook.png" alt=""><br>
+<!-- <img src="http://dotike.github.io/opnsense.core.ja_JP.UTF8/images/jp.15.x.screenshot.png" width="1050" height="622" alt=""></p> -->
+<a href="http://dotike.github.io/opnsense.core.ja_JP.UTF8/images/jp.15.x.screenshot.png"><img src="http://dotike.github.io/opnsense.core.ja_JP.UTF8/images/jp.16.x.screenshot.png" width="525" height="311" alt=""></a></p>
 
 <h3>
 <a id="contributions-bugs-and-help" class="anchor" href="#contributions-bugs-and-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributions, BUGS, and Help</h3>
@@ -54,25 +58,14 @@
 
 <p>A quick-start to get editing the JP translation,</p>
 
-<pre><code>$ git clone git@github.com:dotike/opnsense.core.ja_JP.UTF8.git
-$ cd opnsense.core.ja_JP.UTF8.git
-$ git checkout -b master origin/master
-$ vim src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po
+<pre><code>$ git clone https://github.com/opnsense/core.git
+$ cd core
+# vim lang/ja_JP.po
 </code></pre>
 
+Translate the empty 'msgid' lines,
 
-<p>Notes on one way to rebase from the actual OPNsense core project, this is how we keep in sync with changes,</p>
-
-<pre><code>
-$ git checkout -b master origin/master
-$ git remote add upstream git@github.com:opnsense/core.git
-$ git fetch upstream
-$ git rebase upstream/master
-$ git rebase origin/master
-$ vim src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po
-(make changes, add/commit)
-$ git push origin master:master
-</code></pre>
+Submit a Pull Request to the OPNSense team!
 
 <h3>
 <a id="everyone-can-help" class="anchor" href="#everyone-can-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anyone Can Help</h3>
@@ -80,16 +73,6 @@ $ git push origin master:master
 <p>If you are Japanese/English bilingual, you can just start working on your own by checking out the code!
 One warning, keep your commits and work short- it would be very sad if someone else was translating the very same lines you were- and time was wasted!</p>
 
-<pre><code>$ git https://github.com/dotike/opnsense.core.ja_JP.UTF8.git
-$ cd opnsense.core.ja_JP.UTF8.git
-$ git checkout -b master origin/master
-$ vim src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po
-(translate some lines)
-$ git format-patch &lt;commithash&gt; src/share/locale/ja_JP/LC_MESSAGES/OPNsense.po
-(email the resulting patch files to ike at blackskyresearch dot net!)
-</code></pre>
-
-<p>Once you have submitted a patch or two, feel free to ask for repo access to make things easier- (or just send us git formatted patch files to get going!)</p>
       </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
